@@ -1,0 +1,17 @@
+---
+layout: default
+title: running logstash with upstart
+tags: upstart,ubuntu
+---
+
+# running logstash with upstart
+
+* Goal: Run the logstash agent and elasticsearch through the upstart system daemon.
+* Target audience: Users who have servers with upstart.
+
+Upstart ships with most modern Ubuntu distros. Here are the steps you need to use this:
+
+1. Put the config below in `/etc/init/logstash-agent.conf`
+2. To start it: `sudo initctl start logstash`
+
+{% include_code logstash-agent.conf %}

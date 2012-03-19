@@ -1,0 +1,49 @@
+/* to convert from colorschemedesigner css to variables 
+  :!sed -e 's/ .*:/:/; s/ }$/;/' | tr . '$'
+ 
+ */
+//http://colorschemedesigner.com/#3341Tw0w0w0w0
+$primary-1: #00AF64;
+$primary-2: #218359;
+$primary-3: #007241;
+$primary-4: #36D792;
+$primary-5: #61D7A4;
+$secondary-a_1: #0B61A4;
+$secondary-a_2: #25567B;
+$secondary-a_3: #033E6B;
+$secondary-a_4: #3F92D2;
+$secondary-a_5: #66A3D2;
+$secondary-b_1: #FF9200;
+$secondary-b_2: #BF8230;
+$secondary-b_3: #A65F00;
+$secondary-b_4: #FFAD40;
+$secondary-b_5: #FFC373;
+$complement-1: #FF4900;
+$complement-2: #BF5930;
+$complement-3: #A62F00;
+$complement-4: #FF7640;
+$complement-5: #FF9B73;
+
+$boxminwidth: 300px;
+$margin: 1.282%;
+
+.primary-1 { background-color: $primary-1 }
+.primary-2 { background-color: $primary-2 }
+.primary-3 { background-color: $primary-3 }
+.primary-4 { background-color: $primary-4 }
+.primary-5 { background-color: $primary-5 }
+.secondary-a-1 { background-color: $secondary-a_1 }
+.secondary-a-2 { background-color: $secondary-a_2 }
+.secondary-a-3 { background-color: $secondary-a_3 }
+.secondary-a-4 { background-color: $secondary-a_4 }
+.secondary-a-5 { background-color: $secondary-a_5 }
+.secondary-b-1 { background-color: $secondary-b_1 }
+.secondary-b-2 { background-color: $secondary-b_2 }
+.secondary-b-3 { background-color: $secondary-b_3 }
+.secondary-b-4 { background-color: $secondary-b_4 }
+.secondary-b-5 { background-color: $secondary-b_5 }
+.complement-1 { background-color: $complement-1 }
+.complement-2 { background-color: $complement-2 }
+.complement-3 { background-color: $complement-3 }
+.complement-4 { background-color: $complement-4 }
+.complement-5 { background-color: $complement-5 }

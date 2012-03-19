@@ -1,0 +1,354 @@
+/* to convert from colorschemedesigner css to variables 
+  :!sed -e 's/ .*:/:/; s/ }$/;/' | tr . '$'
+ 
+ */
+/* line 30, ../sass/_palette.scss */
+.primary-1, .splash, .article-splash {
+  background-color: #00af64;
+}
+
+/* line 31, ../sass/_palette.scss */
+.primary-2 {
+  background-color: #218359;
+}
+
+/* line 32, ../sass/_palette.scss */
+.primary-3, html body {
+  background-color: #007241;
+}
+
+/* line 33, ../sass/_palette.scss */
+.primary-4 {
+  background-color: #36d792;
+}
+
+/* line 34, ../sass/_palette.scss */
+.primary-5 {
+  background-color: #61d7a4;
+}
+
+/* line 35, ../sass/_palette.scss */
+.secondary-a-1, header {
+  background-color: #0b61a4;
+}
+
+/* line 36, ../sass/_palette.scss */
+.secondary-a-2 {
+  background-color: #25567b;
+}
+
+/* line 37, ../sass/_palette.scss */
+.secondary-a-3, html, .table-of-contents {
+  background-color: #033e6b;
+}
+
+/* line 38, ../sass/_palette.scss */
+.secondary-a-4 {
+  background-color: #3f92d2;
+}
+
+/* line 39, ../sass/_palette.scss */
+.secondary-a-5 {
+  background-color: #66a3d2;
+}
+
+/* line 40, ../sass/_palette.scss */
+.secondary-b-1 {
+  background-color: #ff9200;
+}
+
+/* line 41, ../sass/_palette.scss */
+.secondary-b-2, .featurelet .inner {
+  background-color: #bf8230;
+}
+
+/* line 42, ../sass/_palette.scss */
+.secondary-b-3, .featurelet .inner:hover {
+  background-color: #a65f00;
+}
+
+/* line 43, ../sass/_palette.scss */
+.secondary-b-4 {
+  background-color: #ffad40;
+}
+
+/* line 44, ../sass/_palette.scss */
+.secondary-b-5 {
+  background-color: #ffc373;
+}
+
+/* line 45, ../sass/_palette.scss */
+.complement-1 {
+  background-color: #ff4900;
+}
+
+/* line 46, ../sass/_palette.scss */
+.complement-2 {
+  background-color: #bf5930;
+}
+
+/* line 47, ../sass/_palette.scss */
+.complement-3 {
+  background-color: #a62f00;
+}
+
+/* line 48, ../sass/_palette.scss */
+.complement-4 {
+  background-color: #ff7640;
+}
+
+/* line 49, ../sass/_palette.scss */
+.complement-5 {
+  background-color: #ff9b73;
+}
+
+/* line 4, ../sass/style.scss */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 10, ../sass/style.scss */
+html body {
+  box-shadow: 0px -5px 20px 5px #218359;
+  color: #FEE;
+  margin-top: 0;
+  max-width: 1000px;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  font-family: "Gudea", Helvetica, Arial, sans-serif;
+  font-size: 12pt;
+  line-height: 18px;
+}
+
+/* line 27, ../sass/style.scss */
+.readmargin {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 32, ../sass/style.scss */
+.splash {
+  border-bottom: 2px solid black;
+}
+/* line 36, ../sass/style.scss */
+.splash .inner {
+  padding: 40px;
+  /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
+   * this url is specified in _layouts/landing.html */
+}
+/* line 42, ../sass/style.scss */
+.splash h1 {
+  text-shadow: black 1px 1px 8px;
+  margin: 0px;
+  font-size: 300%;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+/* line 50, ../sass/style.scss */
+.splash p {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 27px;
+  color: inherit;
+}
+
+/* splash */
+/* line 58, ../sass/style.scss */
+.featurelet {
+  min-width: 300px;
+  float: left;
+  margin-top: 10px !important;
+  color: white;
+  width: 31.624%;
+  margin-left: 1.282%;
+}
+/* line 67, ../sass/style.scss */
+.featurelet .inner {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black !important;
+  border-radius: 15px !important;
+  height: 10em;
+  -moz-transition-property: box-shadow, background-color, border;
+  -webkit-transition-property: box-shadow, background-color, border;
+  -o-transition-property: box-shadow, background-color, border;
+  transition-property: box-shadow, background-color, border;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+/* line 76, ../sass/style.scss */
+.featurelet .inner h1, .featurelet .inner > h2, .featurelet .inner > h3 {
+  text-shadow: black 2px 2px 3px;
+}
+/* line 80, ../sass/style.scss */
+.featurelet .inner > p {
+  text-shadow: black 1px 1px 2px;
+}
+/* line 84, ../sass/style.scss */
+.featurelet .inner a {
+  color: inherit;
+  text-decoration: none;
+}
+/* line 89, ../sass/style.scss */
+.featurelet .inner > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 94, ../sass/style.scss */
+.featurelet .inner > *:first-child {
+  padding-top: 10px;
+}
+/* line 98, ../sass/style.scss */
+.featurelet .inner > *:last-child {
+  padding-bottom: 15px;
+}
+
+/* .featurelet */
+/* line 104, ../sass/style.scss */
+.featurelet .inner:hover {
+  box-shadow: 0 0 15px 3px #ff9b73;
+  border: 2px solid #ffc373 !important;
+  cursor: pointer;
+}
+
+/* line 111, ../sass/style.scss */
+.features {
+  overflow: hidden;
+  padding-bottom: 1em;
+  width: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #007241), color-stop(100%, #00af64));
+  background-image: -webkit-linear-gradient(top, #007241 0%, #00af64 100%);
+  background-image: -moz-linear-gradient(top, #007241 0%, #00af64 100%);
+  background-image: -o-linear-gradient(top, #007241 0%, #00af64 100%);
+  background-image: -ms-linear-gradient(top, #007241 0%, #00af64 100%);
+  background-image: linear-gradient(top, #007241 0%, #00af64 100%);
+  border-bottom: 2px solid black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* line 121, ../sass/style.scss */
+.details {
+  overflow: hidden;
+  padding-bottom: 1em;
+  width: 100%;
+}
+
+/* line 127, ../sass/style.scss */
+.details .info {
+  min-width: 300px;
+  margin-left: 1.282%;
+  width: 48.077%;
+  float: left;
+  margin-top: 10px;
+  color: white;
+}
+/* line 138, ../sass/style.scss */
+.details .info > *:last-child {
+  border-left: 0px;
+}
+/* line 142, ../sass/style.scss */
+.details .info .inner {
+  width: 100%;
+}
+
+/* line 147, ../sass/style.scss */
+header {
+  box-shadow: 0px -5px 40px 15px #3f92d2;
+  border-bottom: 2px solid black;
+  padding: 1em;
+}
+/* line 152, ../sass/style.scss */
+header .logo a {
+  font-family: 'Noticia Text', serif;
+  font-size: 2em;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-shadow: #A62F00 1px 1px 3px;
+  width: 100%;
+  -moz-transition-property: color;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+/* line 161, ../sass/style.scss */
+header .logo a:hover {
+  color: #FFAD40;
+  text-decoration: none;
+}
+/* line 168, ../sass/style.scss */
+header .edit-this-page {
+  float: right;
+}
+
+/* line 174, ../sass/style.scss */
+a {
+  color: #CCF;
+  text-decoration: none;
+}
+
+/* line 179, ../sass/style.scss */
+a:hover {
+  color: #BDF;
+  text-decoration: underline;
+}
+
+/* line 184, ../sass/style.scss */
+h1, h2, h3 {
+  font-family: "Gudea", sans-serif !important;
+}
+
+/* line 188, ../sass/style.scss */
+.article-splash {
+  border-bottom: 2px solid black;
+}
+/* line 192, ../sass/style.scss */
+.article-splash .inner {
+  padding: 40px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+/* line 198, ../sass/style.scss */
+.article-splash h1 {
+  text-shadow: black 1px 1px 8px;
+  margin: 0px;
+  font-size: 300%;
+  line-height: 1;
+  letter-spacing: -1px;
+  display: inline;
+}
+
+/* article-splash */
+/* line 208, ../sass/style.scss */
+.article-splash ~ * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* line 214, ../sass/style.scss */
+.table-of-contents {
+  border: 1px solid black;
+  min-width: 300px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 1px #36d792;
+  float: right;
+  margin: 1.282%;
+  padding: 1em;
+  width: 30%;
+}
+/* line 225, ../sass/style.scss */
+.table-of-contents h1 {
+  font-size: 130%;
+  padding: 0;
+  margin: 0;
+}

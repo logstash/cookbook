@@ -1,0 +1,230 @@
+@import "compass";
+@import "palette";
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  @extend .secondary-a-3;
+
+  body {
+    box-shadow: -0px -5px 20px 5px $primary_2;
+    @extend .primary-3;
+    color: #FEE;
+    margin-top: 0;
+    max-width: 1000px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    font-family: "Gudea", Helvetica, Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 18px;
+  }
+}
+
+.readmargin {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.splash {
+  border-bottom: 2px solid black;
+  @extend .primary-1; 
+
+  .inner {
+    padding: 40px;
+    /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
+     * this url is specified in _layouts/landing.html */
+    //background: url(/lol-logging/img/logstash.png) top right no-repeat;
+  }
+  h1 {
+    text-shadow: black 1px 1px 8px;
+    margin: 0px;
+    font-size: 300%;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 27px;
+    color: inherit;
+  }
+} /* splash */
+
+.featurelet {
+  min-width: $boxminwidth;
+  float: left;
+  margin-top: 10px !important;
+  color: white;
+
+  // 3 columns
+  width: ((100 - ($margin * 4)) / 3);
+  margin-left: $margin;
+  .inner {
+    @extend .secondary-b-2;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black !important;
+    border-radius: 15px !important;
+    height: 10em;
+    @include transition("box-shadow, background-color, border", 0.5s);
+
+    h1, > h2, > h3 {
+      text-shadow: black 2px 2px 3px;
+    }
+
+    > p {
+      text-shadow: black 1px 1px 2px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    > * {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    > *:first-child {
+      padding-top: 10px;
+    }
+
+    > *:last-child {
+      padding-bottom: 15px;
+    }
+  }
+} /* .featurelet */
+
+.featurelet .inner:hover {
+  @extend .secondary-b-3;
+  box-shadow: 0 0 15px 3px $complement-5;
+  border: 2px solid $secondary-b-5 !important;
+  cursor: pointer;
+}
+
+.features {
+  overflow: hidden;
+  padding-bottom: 1em;
+  width: 100%;
+  @include background-image(linear-gradient(top, #007241 0%,#00af64 100%));
+  border-bottom: 2px solid black;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.details {
+  overflow: hidden;
+  padding-bottom: 1em;
+  width: 100%;
+}
+
+.details .info {
+  min-width: $boxminwidth;
+  margin-left: $margin;
+
+  // two columns.
+  width: ((100 - ($margin * 3)) / 2);
+
+  float: left;
+  margin-top: 10px;
+  color: white;
+
+  > *:last-child {
+    border-left: 0px;
+  }
+
+  .inner {
+    width: 100%;
+  }
+}
+
+header {
+  @extend .secondary-a-1; 
+  box-shadow: -0px -5px 40px 15px $secondary_a_4;
+  border-bottom: 2px solid black;
+
+  .logo a {
+    font-family: 'Noticia Text', serif;
+    font-size: 2em;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-shadow: #A62F00 1px 1px 3px;
+    width: 100%;
+    @include transition("color", 0.5s);
+  }
+  .logo a:hover {
+    color: #FFAD40;
+    text-decoration: none;
+  }
+
+  .logo {
+  }
+  .edit-this-page {
+    float: right;
+  }
+  padding: 1em;
+}
+
+a {
+  color: #CCF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #BDF;
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: "Gudea", sans-serif !important;
+}
+
+.article-splash {
+  border-bottom: 2px solid black;
+  @extend .primary-1; 
+
+  .inner {
+    padding: 40px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  h1 {
+    text-shadow: black 1px 1px 8px;
+    margin: 0px;
+    font-size: 300%;
+    line-height: 1;
+    letter-spacing: -1px;
+    display: inline;
+  }
+} /* article-splash */
+
+.article-splash ~ * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.table-of-contents {
+  border: 1px solid black;
+  min-width: $boxminwidth;
+  border-radius: 15px;
+  box-shadow: -0px -0px 20px 1px $primary_4;
+  @extend .secondary-a-3;
+  float: right;
+  margin: $margin;
+  padding: 1em;
+  width: 30%;
+
+  h1 {
+    font-size: 130%;
+    padding: 0;
+    margin: 0;
+  }
+}
