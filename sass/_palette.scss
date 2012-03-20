@@ -1,31 +1,30 @@
-/* to convert from colorschemedesigner css to variables 
-  :!sed -e 's/ .*:/:/; s/ }$/;/' | tr . '$'
- 
- */
-//http://colorschemedesigner.com/#3341Tw0w0w0w0
-$primary-1: #00AF64;
-$primary-2: #218359;
-$primary-3: #007241;
-$primary-4: #36D792;
-$primary-5: #61D7A4;
-$secondary-a_1: #0B61A4;
-$secondary-a_2: #25567B;
-$secondary-a_3: #033E6B;
-$secondary-a_4: #3F92D2;
-$secondary-a_5: #66A3D2;
-$secondary-b_1: #FF9200;
-$secondary-b_2: #BF8230;
-$secondary-b_3: #A65F00;
-$secondary-b_4: #FFAD40;
-$secondary-b_5: #FFC373;
-$complement-1: #FF4900;
-$complement-2: #BF5930;
-$complement-3: #A62F00;
-$complement-4: #FF7640;
-$complement-5: #FF9B73;
-
 $boxminwidth: 300px;
 $margin: 1.282%;
+
+/* to convert from colorschemedesigner css to variables, copy the CSS given and run this:
+  :.!xclip -o | sed -re 's/ .*:/:/; /^ *$/d' | tr . '$' | sed -e 's/ }/;/'
+ */
+// From http://colorschemedesigner.com/#3341Tw0w0w0w0
+$primary-1: #3EA024;
+$primary-2: #417B32;
+$primary-3: #216C0D;
+$primary-4: #71D057;
+$primary-5: #8BD078;
+$secondary-a-1: #1B7969;
+$secondary-a-2: #255D53;
+$secondary-a-3: #0A5145;
+$secondary-a-4: #4FBDAA;
+$secondary-a-5: #6DBDAF;
+$secondary-b-1: #BE662A;
+$secondary-b-2: #925E3B;
+$secondary-b-3: #803D0F;
+$secondary-b-4: #DF925E;
+$secondary-b-5: #DFA781;
+$complement-1: #B62939;
+$complement-2: #8C3842;
+$complement-3: #7B0F1B;
+$complement-4: #DB5C6B;
+$complement-5: #DB7F89;
 
 .primary-1 { background-color: $primary-1 }
 .primary-2 { background-color: $primary-2 }
