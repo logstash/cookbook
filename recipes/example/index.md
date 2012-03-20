@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: Shipping to logstash with rsyslog
 tags: getting started, rsyslog
 ---

@@ -1,10 +1,8 @@
 ---
-layout: default
+layout: article
 title: running logstash with upstart
 tags: upstart,ubuntu
 ---
-
-# running logstash with upstart
 
 * Goal: Run the logstash agent and elasticsearch through the upstart system daemon.
 * Target audience: Users who have servers with upstart.

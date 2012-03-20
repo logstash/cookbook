@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: logging from cron
 tags:  cron
 ---
