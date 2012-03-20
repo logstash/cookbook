@@ -45,6 +45,28 @@ $(document).ready(function() {
     toc.insertBefore($(selector).first());
   }; /* Site.table_of_contents */
 
+  /* If the first element of an article is a 'ul' then fix it up all pretty
+   * and move it into the '.article-splash .inner' */
+  Site.fix_intro = function(selector) {
+    /* Upgrade items of 'Goal: Hello World' to something more than just text. */
+    var el = $(selector + " > *").first();
+    if (el.is("ul")) {
+      el.addClass("bullet-list")
+      $("li", el).each(function() {
+        var item = $(this);
+        var text = item.text();
+        var text_a = text.split(/: */)
+        var subject = text_a[0];
+        var message = text_a[1];
+
+        var title = $("<span>").addClass("bullet-title").text(subject + ":");
+        var text = $("<span>").addClass("bullet-text").text(message);
+        item.addClass("bullet").empty().append(title).append(text);
+      });
+      el.appendTo(".article-splash .inner");
+    }
+  }; /* Site.fix_intro */
+
   jQuery.fn.linkify = function(selector) {
     this.delegate(selector, "click", function(event) {
       event.preventDefault();
