@@ -1,116 +1,115 @@
-/* to convert from colorschemedesigner css to variables 
-  :!sed -e 's/ .*:/:/; s/ }$/;/' | tr . '$'
- 
+/* to convert from colorschemedesigner css to variables, copy the CSS given and run this:
+  :.!xclip -o | sed -re 's/ .*:/:/; /^ *$/d' | tr . '$' | sed -e 's/ }/;/'
  */
-/* line 30, ../sass/_palette.scss */
+/* line 29, ../sass/_palette.scss */
 .primary-1, .splash, .article-splash {
-  background-color: #00af64;
+  background-color: #3ea024;
+}
+
+/* line 30, ../sass/_palette.scss */
+.primary-2 {
+  background-color: #417b32;
 }
 
 /* line 31, ../sass/_palette.scss */
-.primary-2 {
-  background-color: #218359;
+.primary-3, html body {
+  background-color: #216c0d;
 }
 
 /* line 32, ../sass/_palette.scss */
-.primary-3, html body {
-  background-color: #007241;
+.primary-4 {
+  background-color: #71d057;
 }
 
 /* line 33, ../sass/_palette.scss */
-.primary-4 {
-  background-color: #36d792;
+.primary-5 {
+  background-color: #8bd078;
 }
 
 /* line 34, ../sass/_palette.scss */
-.primary-5 {
-  background-color: #61d7a4;
+.secondary-a-1, header {
+  background-color: #1b7969;
 }
 
 /* line 35, ../sass/_palette.scss */
-.secondary-a-1, header {
-  background-color: #0b61a4;
+.secondary-a-2 {
+  background-color: #255d53;
 }
 
 /* line 36, ../sass/_palette.scss */
-.secondary-a-2 {
-  background-color: #25567b;
+.secondary-a-3, html, .table-of-contents {
+  background-color: #0a5145;
 }
 
 /* line 37, ../sass/_palette.scss */
-.secondary-a-3, html, .table-of-contents {
-  background-color: #033e6b;
+.secondary-a-4 {
+  background-color: #4fbdaa;
 }
 
 /* line 38, ../sass/_palette.scss */
-.secondary-a-4 {
-  background-color: #3f92d2;
+.secondary-a-5 {
+  background-color: #6dbdaf;
 }
 
 /* line 39, ../sass/_palette.scss */
-.secondary-a-5 {
-  background-color: #66a3d2;
+.secondary-b-1 {
+  background-color: #be662a;
 }
 
 /* line 40, ../sass/_palette.scss */
-.secondary-b-1 {
-  background-color: #ff9200;
+.secondary-b-2, .featurelet .inner {
+  background-color: #925e3b;
 }
 
 /* line 41, ../sass/_palette.scss */
-.secondary-b-2, .featurelet .inner {
-  background-color: #bf8230;
+.secondary-b-3, .featurelet .inner:hover {
+  background-color: #803d0f;
 }
 
 /* line 42, ../sass/_palette.scss */
-.secondary-b-3, .featurelet .inner:hover {
-  background-color: #a65f00;
+.secondary-b-4 {
+  background-color: #df925e;
 }
 
 /* line 43, ../sass/_palette.scss */
-.secondary-b-4 {
-  background-color: #ffad40;
+.secondary-b-5 {
+  background-color: #dfa781;
 }
 
 /* line 44, ../sass/_palette.scss */
-.secondary-b-5 {
-  background-color: #ffc373;
+.complement-1 {
+  background-color: #b62939;
 }
 
 /* line 45, ../sass/_palette.scss */
-.complement-1 {
-  background-color: #ff4900;
+.complement-2 {
+  background-color: #8c3842;
 }
 
 /* line 46, ../sass/_palette.scss */
-.complement-2 {
-  background-color: #bf5930;
+.complement-3 {
+  background-color: #7b0f1b;
 }
 
 /* line 47, ../sass/_palette.scss */
-.complement-3 {
-  background-color: #a62f00;
+.complement-4 {
+  background-color: #db5c6b;
 }
 
 /* line 48, ../sass/_palette.scss */
-.complement-4 {
-  background-color: #ff7640;
-}
-
-/* line 49, ../sass/_palette.scss */
 .complement-5 {
-  background-color: #ff9b73;
+  background-color: #db7f89;
 }
 
 /* line 4, ../sass/style.scss */
 html {
   height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 /* line 10, ../sass/style.scss */
 html body {
-  box-shadow: 0px -5px 20px 5px #218359;
+  box-shadow: 0px -5px 20px 5px #417b32;
   color: #FEE;
   margin-top: 0;
   max-width: 1000px;
@@ -124,23 +123,23 @@ html body {
   line-height: 18px;
 }
 
-/* line 27, ../sass/style.scss */
+/* line 28, ../sass/style.scss */
 .readmargin {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* line 32, ../sass/style.scss */
+/* line 33, ../sass/style.scss */
 .splash {
   border-bottom: 2px solid black;
 }
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 .splash .inner {
   padding: 40px;
   /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
    * this url is specified in _layouts/landing.html */
 }
-/* line 42, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .splash h1 {
   text-shadow: black 1px 1px 8px;
   margin: 0px;
@@ -148,7 +147,7 @@ html body {
   line-height: 1;
   letter-spacing: -1px;
 }
-/* line 50, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .splash p {
   font-size: 18px;
   font-weight: 200;
@@ -157,7 +156,7 @@ html body {
 }
 
 /* splash */
-/* line 58, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 .featurelet {
   min-width: 300px;
   float: left;
@@ -166,81 +165,94 @@ html body {
   width: 31.624%;
   margin-left: 1.282%;
 }
-/* line 67, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .featurelet .inner {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a46a42), color-stop(100%, #6e472c));
+  background-image: -webkit-linear-gradient(top, #a46a42 0%, #6e472c 100%);
+  background-image: -moz-linear-gradient(top, #a46a42 0%, #6e472c 100%);
+  background-image: -o-linear-gradient(top, #a46a42 0%, #6e472c 100%);
+  background-image: -ms-linear-gradient(top, #a46a42 0%, #6e472c 100%);
+  background-image: linear-gradient(top, #a46a42 0%, #6e472c 100%);
   width: 100%;
   height: 100%;
   border: 2px solid black !important;
   border-radius: 15px !important;
   height: 10em;
-  -moz-transition-property: box-shadow, background-color, border;
-  -webkit-transition-property: box-shadow, background-color, border;
-  -o-transition-property: box-shadow, background-color, border;
-  transition-property: box-shadow, background-color, border;
+  -moz-transition-property: box-shadow, border, background;
+  -webkit-transition-property: box-shadow, border, background;
+  -o-transition-property: box-shadow, border, background;
+  transition-property: box-shadow, border, background;
   -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 76, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .featurelet .inner h1, .featurelet .inner > h2, .featurelet .inner > h3 {
   text-shadow: black 2px 2px 3px;
 }
-/* line 80, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 .featurelet .inner > p {
   text-shadow: black 1px 1px 2px;
 }
-/* line 84, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .featurelet .inner a {
   color: inherit;
   text-decoration: none;
 }
-/* line 89, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .featurelet .inner > * {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 94, ../sass/style.scss */
+/* line 96, ../sass/style.scss */
 .featurelet .inner > *:first-child {
   padding-top: 10px;
 }
-/* line 98, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .featurelet .inner > *:last-child {
   padding-bottom: 15px;
 }
 
 /* .featurelet */
-/* line 104, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 .featurelet .inner:hover {
-  box-shadow: 0 0 15px 3px #ff9b73;
-  border: 2px solid #ffc373 !important;
+  box-shadow: 0 0 15px 3px #db7f89;
+  border: 2px solid #dfa781 !important;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a46a42), color-stop(100%, #492f1e));
+  background-image: -webkit-linear-gradient(top, #a46a42 0%, #492f1e 100%);
+  background-image: -moz-linear-gradient(top, #a46a42 0%, #492f1e 100%);
+  background-image: -o-linear-gradient(top, #a46a42 0%, #492f1e 100%);
+  background-image: -ms-linear-gradient(top, #a46a42 0%, #492f1e 100%);
+  background-image: linear-gradient(top, #a46a42 0%, #492f1e 100%);
   cursor: pointer;
+  background-position: 0% 5%;
 }
 
-/* line 111, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 .features {
   overflow: hidden;
   padding-bottom: 1em;
   width: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #007241), color-stop(100%, #00af64));
-  background-image: -webkit-linear-gradient(top, #007241 0%, #00af64 100%);
-  background-image: -moz-linear-gradient(top, #007241 0%, #00af64 100%);
-  background-image: -o-linear-gradient(top, #007241 0%, #00af64 100%);
-  background-image: -ms-linear-gradient(top, #007241 0%, #00af64 100%);
-  background-image: linear-gradient(top, #007241 0%, #00af64 100%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4b8d39), color-stop(100%, #2e5723));
+  background-image: -webkit-linear-gradient(top, #4b8d39 0%, #2e5723 100%);
+  background-image: -moz-linear-gradient(top, #4b8d39 0%, #2e5723 100%);
+  background-image: -o-linear-gradient(top, #4b8d39 0%, #2e5723 100%);
+  background-image: -ms-linear-gradient(top, #4b8d39 0%, #2e5723 100%);
+  background-image: linear-gradient(top, #4b8d39 0%, #2e5723 100%);
   border-bottom: 2px solid black;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
-/* line 121, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 .details {
   overflow: hidden;
   padding-bottom: 1em;
   width: 100%;
 }
 
-/* line 127, ../sass/style.scss */
+/* line 132, ../sass/style.scss */
 .details .info {
   min-width: 300px;
   margin-left: 1.282%;
@@ -249,22 +261,22 @@ html body {
   margin-top: 10px;
   color: white;
 }
-/* line 138, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .details .info > *:last-child {
   border-left: 0px;
 }
-/* line 142, ../sass/style.scss */
+/* line 147, ../sass/style.scss */
 .details .info .inner {
   width: 100%;
 }
 
-/* line 147, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 header {
-  box-shadow: 0px -5px 40px 15px #3f92d2;
+  box-shadow: 0px -5px 40px 15px #4fbdaa;
   border-bottom: 2px solid black;
   padding: 1em;
 }
-/* line 152, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 header .logo a {
   font-family: 'Noticia Text', serif;
   font-size: 2em;
@@ -281,44 +293,44 @@ header .logo a {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 161, ../sass/style.scss */
+/* line 166, ../sass/style.scss */
 header .logo a:hover {
   color: #FFAD40;
   text-decoration: none;
 }
-/* line 168, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 header .edit-this-page {
   float: right;
 }
 
-/* line 174, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 a {
   color: #CCF;
   text-decoration: none;
 }
 
-/* line 179, ../sass/style.scss */
+/* line 184, ../sass/style.scss */
 a:hover {
   color: #BDF;
   text-decoration: underline;
 }
 
-/* line 184, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 h1, h2, h3 {
   font-family: "Gudea", sans-serif !important;
 }
 
-/* line 188, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 .article-splash {
   border-bottom: 2px solid black;
 }
-/* line 192, ../sass/style.scss */
+/* line 197, ../sass/style.scss */
 .article-splash .inner {
   padding: 40px;
   padding-top: 1em;
   padding-bottom: 1em;
 }
-/* line 198, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
 .article-splash h1 {
   text-shadow: black 1px 1px 8px;
   margin: 0px;
@@ -329,24 +341,24 @@ h1, h2, h3 {
 }
 
 /* article-splash */
-/* line 208, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .article-splash ~ * {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-/* line 214, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 .table-of-contents {
   border: 1px solid black;
   min-width: 300px;
   border-radius: 15px;
-  box-shadow: 0px 0px 20px 1px #36d792;
+  box-shadow: 0px 0px 20px 1px #71d057;
   float: right;
   margin: 1.282%;
   padding: 1em;
   width: 30%;
 }
-/* line 225, ../sass/style.scss */
+/* line 229, ../sass/style.scss */
 .table-of-contents h1 {
   font-size: 130%;
   padding: 0;
