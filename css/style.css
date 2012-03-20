@@ -7,7 +7,7 @@
 }
 
 /* line 30, ../sass/_palette.scss */
-.primary-2, .article .bullet-list {
+.primary-2, .article .bullet-list, .article pre {
   background-color: #417b32;
 }
 
@@ -101,13 +101,14 @@
   background-color: #db7f89;
 }
 
-/* line 4, ../sass/style.scss */
+/* line 7, ../sass/style.scss */
 html {
   height: 100%;
   margin: 0px;
   padding: 0px;
+  /* body */
 }
-/* line 10, ../sass/style.scss */
+/* line 13, ../sass/style.scss */
 html body {
   box-shadow: 0px -5px 20px 5px #417b32;
   color: #FEE;
@@ -120,26 +121,32 @@ html body {
   border-right: 1px solid black;
   font-family: "Gudea", Helvetica, Arial, sans-serif;
   font-size: 12pt;
-  line-height: 18px;
 }
 
-/* line 28, ../sass/style.scss */
+/* html */
+/* line 29, ../sass/style.scss */
 .readmargin {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* line 33, ../sass/style.scss */
+/* line 34, ../sass/style.scss */
 .splash {
   border-bottom: 2px solid black;
 }
-/* line 37, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 .splash .inner {
   padding: 40px;
   /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
    * this url is specified in _layouts/landing.html */
 }
-/* line 43, ../sass/style.scss */
+@media (max-width: 400px) {
+  /* line 38, ../sass/style.scss */
+  .splash .inner {
+    padding: 5px !important;
+  }
+}
+/* line 47, ../sass/style.scss */
 .splash h1 {
   text-shadow: black 1px 1px 8px;
   margin: 0px;
@@ -147,7 +154,7 @@ html body {
   line-height: 1;
   letter-spacing: -1px;
 }
-/* line 51, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .splash p {
   font-size: 18px;
   font-weight: 200;
@@ -156,7 +163,7 @@ html body {
 }
 
 /* splash */
-/* line 59, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 .featurelet {
   min-width: 300px;
   float: left;
@@ -165,7 +172,7 @@ html body {
   width: 31.624%;
   margin-left: 1.282%;
 }
-/* line 68, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 .featurelet .inner {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a46a42), color-stop(100%, #6e472c));
   background-image: -webkit-linear-gradient(top, #a46a42 0%, #6e472c 100%);
@@ -178,6 +185,8 @@ html body {
   border: 2px solid black !important;
   border-radius: 15px !important;
   height: 10em;
+  padding-bottom: 1.282%;
+  overflow: hidden;
   -moz-transition-property: box-shadow, border, background;
   -webkit-transition-property: box-shadow, border, background;
   -o-transition-property: box-shadow, border, background;
@@ -187,35 +196,36 @@ html body {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 78, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .featurelet .inner h1, .featurelet .inner > h2, .featurelet .inner > h3 {
   text-shadow: black 2px 2px 3px;
+  margin: 0;
 }
-/* line 82, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 .featurelet .inner > p {
   text-shadow: black 1px 1px 2px;
 }
-/* line 86, ../sass/style.scss */
+/* line 93, ../sass/style.scss */
 .featurelet .inner a {
   color: inherit;
   text-decoration: none;
 }
-/* line 91, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 .featurelet .inner > * {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 96, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .featurelet .inner > *:first-child {
   padding-top: 10px;
 }
-/* line 100, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 .featurelet .inner > *:last-child {
   padding-bottom: 15px;
 }
 
 /* .featurelet */
-/* line 107, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 .featurelet .inner:hover {
   box-shadow: 0 0 15px 3px #db7f89;
   border: 2px solid #dfa781 !important;
@@ -229,7 +239,7 @@ html body {
   background-position: 0% 5%;
 }
 
-/* line 116, ../sass/style.scss */
+/* line 123, ../sass/style.scss */
 .features {
   overflow: hidden;
   padding-bottom: 1em;
@@ -245,14 +255,14 @@ html body {
   border-bottom-right-radius: 15px;
 }
 
-/* line 126, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .details {
   overflow: hidden;
   padding-bottom: 1em;
   width: 100%;
 }
 
-/* line 132, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .details .info {
   min-width: 300px;
   margin-left: 1.282%;
@@ -261,22 +271,22 @@ html body {
   margin-top: 10px;
   color: white;
 }
-/* line 143, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 .details .info > *:last-child {
   border-left: 0px;
 }
-/* line 147, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 .details .info .inner {
   width: 100%;
 }
 
-/* line 152, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 header {
   box-shadow: 0px -5px 40px 15px #4fbdaa;
   border-bottom: 2px solid black;
   padding: 1em;
 }
-/* line 157, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 header .logo a {
   font-family: 'Noticia Text', serif;
   font-size: 2em;
@@ -293,44 +303,55 @@ header .logo a {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 166, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 header .logo a:hover {
   color: #FFAD40;
   text-decoration: none;
 }
-/* line 173, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 header .edit-this-page {
   float: right;
 }
 
-/* line 179, ../sass/style.scss */
+/* line 186, ../sass/style.scss */
 a {
   color: #CCF;
   text-decoration: none;
 }
 
-/* line 184, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 a:hover {
   color: #BDF;
   text-decoration: underline;
 }
 
-/* line 189, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 h1, h2, h3 {
   font-family: "Gudea", sans-serif !important;
 }
 
-/* line 193, ../sass/style.scss */
+/* line 200, ../sass/style.scss */
+#content {
+  padding-bottom: 1em;
+}
+
+/* line 204, ../sass/style.scss */
 .article-splash {
   border-bottom: 2px solid black;
 }
-/* line 197, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 .article-splash .inner {
   padding: 40px;
   padding-top: 1em;
   padding-bottom: 1em;
 }
-/* line 203, ../sass/style.scss */
+@media (max-width: 400px) {
+  /* line 208, ../sass/style.scss */
+  .article-splash .inner {
+    padding: 5px !important;
+  }
+}
+/* line 217, ../sass/style.scss */
 .article-splash h1 {
   text-shadow: black 1px 1px 8px;
   margin: 0px;
@@ -341,13 +362,13 @@ h1, h2, h3 {
 }
 
 /* article-splash */
-/* line 213, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 .article-splash ~ * {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-/* line 218, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .table-of-contents {
   border: 1px solid black;
   min-width: 300px;
@@ -358,14 +379,33 @@ h1, h2, h3 {
   padding: 1em;
   width: 30%;
 }
-/* line 229, ../sass/style.scss */
+@media (max-width: 400px) {
+  /* line 232, ../sass/style.scss */
+  .table-of-contents {
+    min-width: 260px;
+  }
+}
+/* line 246, ../sass/style.scss */
 .table-of-contents h1 {
   font-size: 130%;
   padding: 0;
   margin: 0;
 }
+/* line 252, ../sass/style.scss */
+.table-of-contents .topic-h1 {
+  margin-left: 1em;
+}
+/* line 253, ../sass/style.scss */
+.table-of-contents .topic-h2 {
+  margin-left: 2em;
+}
+/* line 254, ../sass/style.scss */
+.table-of-contents .topic-h3 {
+  margin-left: 3em;
+}
 
-/* line 237, ../sass/style.scss */
+/* .table-of-contents */
+/* line 258, ../sass/style.scss */
 .article .bullet-list {
   margin: 0;
   margin-top: 1em;
@@ -375,20 +415,37 @@ h1, h2, h3 {
   min-width: 300px;
   opacity: 0.9;
 }
-/* line 248, ../sass/style.scss */
-.article li.bullet:last {
+@media (max-width: 400px) {
+  /* line 258, ../sass/style.scss */
+  .article .bullet-list {
+    min-width: 260px;
+  }
+}
+/* line 272, ../sass/style.scss */
+.article .bullet-list li.bullet:last {
   margin-bottom: 0em;
 }
-/* line 252, ../sass/style.scss */
-.article li.bullet {
+/* line 276, ../sass/style.scss */
+.article .bullet-list li.bullet {
   font-size: 110%;
   margin: 0;
   list-style-type: none;
   padding-top: 1px;
   padding-bottom: 1px;
 }
-/* line 261, ../sass/style.scss */
-.article .bullet-title {
+/* line 284, ../sass/style.scss */
+.article .bullet-list .bullet-title {
   font-weight: bold;
   padding-right: 5px;
 }
+/* line 291, ../sass/style.scss */
+.article pre {
+  overflow: scroll-x;
+  max-width: 100%;
+  border: 1px solid #8bd078;
+  margin-left: 1em;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* .article */
