@@ -188,7 +188,8 @@ header {
 }
 
 a {
-  color: #CCF;
+  color: lighten($complement-5, 20%);
+  font-weight: bold;
   text-decoration: none;
 }
 
