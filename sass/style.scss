@@ -33,20 +33,20 @@ html {
 
 .splash {
   border-bottom: 2px solid black;
-  @extend .primary-1; 
   overflow: auto;
   width: 100%;
 
+  background-color: $primary-1 !important;
   .inner {
     overflow: auto;
 
     padding: 40px;
+    @media (max-width: 600px) {
+      background-color: rgba(red($primary-1), green($primary-2), blue($primary-2), 0.7 );
+    }
     @media (max-width: 400px) {
       padding: 5px !important;
     }
-    /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
-     * this url is specified in _layouts/landing.html */
-    //background: url(/lol-logging/img/logstash.png) top right no-repeat;
   }
   h1 {
     text-shadow: black 1px 1px 8px;

@@ -2,7 +2,7 @@
   :.!xclip -o | sed -re 's/ .*:/:/; /^ *$/d' | tr . '$' | sed -e 's/ }/;/'
  */
 /* line 29, ../sass/_palette.scss */
-.primary-1, .splash, .article-splash {
+.primary-1, .article-splash {
   background-color: #3ea024;
 }
 
@@ -135,13 +135,18 @@ html body {
   border-bottom: 2px solid black;
   overflow: auto;
   width: 100%;
+  background-color: #3ea024 !important;
 }
 /* line 40, ../sass/style.scss */
 .splash .inner {
   overflow: auto;
   padding: 40px;
-  /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
-   * this url is specified in _layouts/landing.html */
+}
+@media (max-width: 600px) {
+  /* line 40, ../sass/style.scss */
+  .splash .inner {
+    background-color: rgba(62, 123, 50, 0.7);
+  }
 }
 @media (max-width: 400px) {
   /* line 40, ../sass/style.scss */
@@ -318,43 +323,44 @@ header .edit-this-page {
 
 /* line 190, ../sass/style.scss */
 a {
-  color: #CCF;
+  color: #f1cfd2;
+  font-weight: bold;
   text-decoration: none;
 }
 
-/* line 195, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 a:hover {
   color: #BDF;
   text-decoration: underline;
 }
 
-/* line 200, ../sass/style.scss */
+/* line 201, ../sass/style.scss */
 h1, h2, h3 {
   font-family: "Gudea", sans-serif !important;
 }
 
-/* line 204, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 #content {
   padding-bottom: 1em;
 }
 
-/* line 208, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 .article-splash {
   border-bottom: 2px solid black;
 }
-/* line 212, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .article-splash .inner {
   padding: 40px;
   padding-top: 1em;
   padding-bottom: 1em;
 }
 @media (max-width: 400px) {
-  /* line 212, ../sass/style.scss */
+  /* line 213, ../sass/style.scss */
   .article-splash .inner {
     padding: 5px !important;
   }
 }
-/* line 221, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 .article-splash h1 {
   text-shadow: black 1px 1px 8px;
   margin: 0px;
@@ -365,13 +371,13 @@ h1, h2, h3 {
 }
 
 /* article-splash */
-/* line 231, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .article-splash ~ * {
   margin-left: 20px;
   margin-right: 20px;
 }
 
-/* line 236, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 .table-of-contents {
   border: 1px solid black;
   min-width: 300px;
@@ -383,37 +389,37 @@ h1, h2, h3 {
   width: 30%;
 }
 @media (max-width: 400px) {
-  /* line 236, ../sass/style.scss */
+  /* line 237, ../sass/style.scss */
   .table-of-contents {
     min-width: 260px;
   }
 }
-/* line 250, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 .table-of-contents ul, .table-of-contents ol {
   margin: 0;
   padding-left: 1em;
 }
-/* line 256, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 .table-of-contents h1 {
   font-size: 130%;
   padding: 0;
   margin: 0;
 }
-/* line 262, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 .table-of-contents .topic-h1 {
   margin-left: 1em;
 }
-/* line 263, ../sass/style.scss */
+/* line 264, ../sass/style.scss */
 .table-of-contents .topic-h2 {
   margin-left: 2em;
 }
-/* line 264, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 .table-of-contents .topic-h3 {
   margin-left: 3em;
 }
 
 /* .table-of-contents */
-/* line 268, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 .article .bullet-list {
   margin: 0;
   margin-top: 1em;
@@ -424,16 +430,16 @@ h1, h2, h3 {
   opacity: 0.9;
 }
 @media (max-width: 400px) {
-  /* line 268, ../sass/style.scss */
+  /* line 269, ../sass/style.scss */
   .article .bullet-list {
     min-width: 260px;
   }
 }
-/* line 283, ../sass/style.scss */
+/* line 284, ../sass/style.scss */
 .article .bullet-list li.bullet:last {
   margin-bottom: 0em;
 }
-/* line 287, ../sass/style.scss */
+/* line 288, ../sass/style.scss */
 .article .bullet-list li.bullet {
   font-size: 110%;
   margin: 0;
@@ -441,12 +447,12 @@ h1, h2, h3 {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-/* line 295, ../sass/style.scss */
+/* line 296, ../sass/style.scss */
 .article .bullet-list .bullet-title {
   font-weight: bold;
   padding-right: 5px;
 }
-/* line 302, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 .article pre {
   overflow: scroll-x;
   max-width: 100%;
