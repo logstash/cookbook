@@ -46,7 +46,8 @@ $(document).ready(function() {
       entry.append(link);
       toc.append(entry);
     });
-    toc.insertBefore($(selector).first());
+    //toc.insertBefore($(selector).first());
+    toc.appendTo(".article-splash .inner");
   }; /* Site.table_of_contents */
 
   /* If the first element of an article is a 'ul' then fix it up all pretty

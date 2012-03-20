@@ -34,8 +34,12 @@ html {
 .splash {
   border-bottom: 2px solid black;
   @extend .primary-1; 
+  overflow: auto;
+  width: 100%;
 
   .inner {
+    overflow: auto;
+
     padding: 40px;
     @media (max-width: 400px) {
       padding: 5px !important;
@@ -262,6 +266,7 @@ h1, h2, h3 {
     @extend .primary-2;
     border-radius: 15px;
     max-width: 50%;
+
     min-width: $boxminwidth;
     @media (max-width: 400px) {
       min-width: ($boxminwidth - 40);
