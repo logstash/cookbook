@@ -7,7 +7,7 @@ tags:  cron
 * Goal: Ship cron logs to logstash.
 * Audience: Folks who use cron and want to direct log output somewhere
 
-## preface: email sucks
+# preface: email sucks
 
 The most common way I see folks logging from cron is to use the MAILTO= setting
 to direct job output to email. Unfortunately, people easily train themselves
@@ -16,7 +16,7 @@ and their mail programs to ignore such mail.
 You probably to save the logs somewhere so you can debug and analyze them later,
 and the best place for that is probably not your inbox.
 
-## using logger, instead
+# using logger, instead
 
 logger is a tool that reads data on standard input. Here's an example use:
 
@@ -35,7 +35,7 @@ Once you are using the `logger` tool, you can have your local syslog agent
 logstash's file input to pick this data up from wherever the logs end up (often
 /var/log/messages)
 
-## example
+# example
 
 For this example, we will be logging output of an old-file cleaner:
 

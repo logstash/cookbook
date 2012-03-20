@@ -8,7 +8,7 @@ tags: getting started, rsyslog
 * Audience: Folks who cannot or will not deploy the logstash agent to some or
   all servers.
 
-## preface: why rsyslog?
+# preface: why rsyslog?
 
 It's an alternative to using logstash on your nodes to ship logs.
 
@@ -22,12 +22,12 @@ I have no preference for rsyslog, but it happens to be a reasonable alternative
 to the logstash agent on your edge servers given it ships by default with some
 OS distributions.
 
-## agenda
+# agenda
 
 * Configure rsyslog
 * Configure logstash to accept syslog messages
 
-## configure rsyslog
+# configure rsyslog
 
 The rsyslog daemon is useful for both taking local syslog messages as well as
 for pulling logs from files.
@@ -40,7 +40,7 @@ mysql log files to logstash.
 
 {% include_code rsyslog.conf %}
 
-## configure logstash
+# configure logstash
 
 Now, logstash needs to be told to accept syslog input. This is simple enough.
 Here is an example config that takes syslog and emits it to stdout:
