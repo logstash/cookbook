@@ -1,6 +1,9 @@
 @import "compass";
 @import "palette";
 
+@media all and (max-width: 699px) and (min-width: 520px), (min-width: 1151px) {
+}
+
 html {
   height: 100%;
   margin: 0px;
@@ -20,10 +23,8 @@ html {
     border-right: 1px solid black;
     font-family: "Gudea", Helvetica, Arial, sans-serif;
     font-size: 12pt;
-    line-height: 18px;
-  }
-
-}
+  } /* body */
+} /* html */
 
 .readmargin {
   padding-left: 10px;
@@ -36,6 +37,9 @@ html {
 
   .inner {
     padding: 40px;
+    @media (max-width: 400px) {
+      padding: 5px !important;
+    }
     /* Jekyll won't apply {{ foo }} template stuff to sass/css, so,
      * this url is specified in _layouts/landing.html */
     //background: url(/lol-logging/img/logstash.png) top right no-repeat;
@@ -73,10 +77,13 @@ html {
     border: 2px solid black !important;
     border-radius: 15px !important;
     height: 10em;
+    padding-bottom: $margin;
+    overflow: hidden;
     @include transition("box-shadow, border, background", 0.5s);
 
     h1, > h2, > h3 {
       text-shadow: black 2px 2px 3px;
+      margin: 0;
     }
 
     > p {
@@ -190,12 +197,19 @@ h1, h2, h3 {
   font-family: "Gudea", sans-serif !important;
 }
 
+#content {
+  padding-bottom: 1em;
+}
+
 .article-splash {
   border-bottom: 2px solid black;
   @extend .primary-1; 
 
   .inner {
     padding: 40px;
+    @media (max-width: 400px) {
+      padding: 5px !important;
+    }
     padding-top: 1em;
     padding-bottom: 1em;
   }
@@ -218,6 +232,9 @@ h1, h2, h3 {
 .table-of-contents {
   border: 1px solid black;
   min-width: $boxminwidth;
+  @media (max-width: 400px) {
+    min-width: ($boxminwidth - 40);
+  }
   border-radius: 15px;
   box-shadow: -0px -0px 20px 1px $primary_4;
   @extend .secondary-a-3;
@@ -231,7 +248,11 @@ h1, h2, h3 {
     padding: 0;
     margin: 0;
   }
-}
+
+  .topic-h1 { margin-left: 1em; }
+  .topic-h2 { margin-left: 2em; }
+  .topic-h3 { margin-left: 3em; }
+} /* .table-of-contents */
 
 .article {
   .bullet-list {
@@ -241,25 +262,39 @@ h1, h2, h3 {
     @extend .primary-2;
     border-radius: 15px;
     max-width: 50%;
-    min-width: 300px;
+    min-width: $boxminwidth;
+    @media (max-width: 400px) {
+      min-width: ($boxminwidth - 40);
+    }
+
     opacity: 0.9;
+
+    li.bullet:last {
+      margin-bottom: 0em;
+    }
+
+    li.bullet {
+      font-size: 110%;
+      margin: 0;
+      list-style-type: none;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    .bullet-title {
+      font-weight: bold;
+      padding-right: 5px;
+    }
   }
 
-  li.bullet:last {
-    margin-bottom: 0em;
-  }
 
-  li.bullet {
-    font-size: 110%;
-    //line-height: 130%;
-    margin: 0;
-    list-style-type: none;
-    padding-top: 1px;
-    padding-bottom: 1px;
+  pre {
+    overflow: scroll-x;
+    max-width: 100%;
+    border: 1px solid $primary-5;
+    margin-left: 1em;
+    @extend .primary-2;
+    border-radius: 8px;
+    padding: 10px;
   }
-
-  .bullet-title {
-    font-weight: bold;
-    padding-right: 5px;
-  }
-}
+} /* .article */

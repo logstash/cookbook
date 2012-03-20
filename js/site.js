@@ -37,9 +37,13 @@ $(document).ready(function() {
     var toc = $("<div>").addClass("table-of-contents");
     toc.append("<h1>Table of Contents</h1>");
     $(selector).each(function(i, element) {
+      var el = $(element);
       console.log($(element));
       var entry = $("<div>");
-      entry.html($(element).text());
+      var link = $("<a>").attr("href", "#" + el.text()).text(el.text());
+      /* Add a 'topic-h2' or similar class */
+      entry.addClass("topic-" + element.tagName.toLowerCase());
+      entry.append(link);
       toc.append(entry);
     });
     toc.insertBefore($(selector).first());
@@ -66,6 +70,15 @@ $(document).ready(function() {
       el.appendTo(".article-splash .inner");
     }
   }; /* Site.fix_intro */
+
+  /* Make the text of matching elements into anchors. */
+  Site.anchor = function(selector) {
+    $(selector).each(function() {
+      var el = $(this);
+      var anchor = $("<a>").attr("name", el.text());
+      $(this).prepend(anchor);
+    });
+  }
 
   jQuery.fn.linkify = function(selector) {
     this.delegate(selector, "click", function(event) {
