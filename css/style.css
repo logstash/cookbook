@@ -389,26 +389,31 @@ h1, h2, h3 {
   }
 }
 /* line 250, ../sass/style.scss */
+.table-of-contents ul, .table-of-contents ol {
+  margin: 0;
+  padding-left: 1em;
+}
+/* line 256, ../sass/style.scss */
 .table-of-contents h1 {
   font-size: 130%;
   padding: 0;
   margin: 0;
 }
-/* line 256, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .table-of-contents .topic-h1 {
   margin-left: 1em;
 }
-/* line 257, ../sass/style.scss */
+/* line 263, ../sass/style.scss */
 .table-of-contents .topic-h2 {
   margin-left: 2em;
 }
-/* line 258, ../sass/style.scss */
+/* line 264, ../sass/style.scss */
 .table-of-contents .topic-h3 {
   margin-left: 3em;
 }
 
 /* .table-of-contents */
-/* line 262, ../sass/style.scss */
+/* line 268, ../sass/style.scss */
 .article .bullet-list {
   margin: 0;
   margin-top: 1em;
@@ -419,16 +424,16 @@ h1, h2, h3 {
   opacity: 0.9;
 }
 @media (max-width: 400px) {
-  /* line 262, ../sass/style.scss */
+  /* line 268, ../sass/style.scss */
   .article .bullet-list {
     min-width: 260px;
   }
 }
-/* line 277, ../sass/style.scss */
+/* line 283, ../sass/style.scss */
 .article .bullet-list li.bullet:last {
   margin-bottom: 0em;
 }
-/* line 281, ../sass/style.scss */
+/* line 287, ../sass/style.scss */
 .article .bullet-list li.bullet {
   font-size: 110%;
   margin: 0;
@@ -436,12 +441,12 @@ h1, h2, h3 {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-/* line 289, ../sass/style.scss */
+/* line 295, ../sass/style.scss */
 .article .bullet-list .bullet-title {
   font-weight: bold;
   padding-right: 5px;
 }
-/* line 296, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
 .article pre {
   overflow: scroll-x;
   max-width: 100%;
