@@ -1,2 +1,4 @@
 auto: true
 title: logstash cookbook
+repo: https://github.com/logstash/cookbook
+branch: master
