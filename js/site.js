@@ -36,18 +36,20 @@ $(document).ready(function() {
   Site.table_of_contents = function(selector) {
     var toc = $("<div>").addClass("table-of-contents");
     toc.append("<h1>Table of Contents</h1>");
+    list = $("<ol>");
     $(selector).each(function(i, element) {
       var el = $(element);
       console.log($(element));
-      var entry = $("<div>");
+      var entry = $("<li>");
       var link = $("<a>").attr("href", "#" + el.text()).text(el.text());
       /* Add a 'topic-h2' or similar class */
       entry.addClass("topic-" + element.tagName.toLowerCase());
       entry.append(link);
-      toc.append(entry);
+      list.append(entry);
     });
-    //toc.insertBefore($(selector).first());
-    toc.appendTo(".article-splash .inner");
+    toc.append(list);
+    toc.insertBefore($(selector).first());
+    //toc.appendTo(".article-splash .inner");
   }; /* Site.table_of_contents */
 
   /* If the first element of an article is a 'ul' then fix it up all pretty

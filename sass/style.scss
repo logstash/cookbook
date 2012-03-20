@@ -247,6 +247,12 @@ h1, h2, h3 {
   padding: 1em;
   width: 30%;
 
+  ul, ol {
+    margin: 0;
+    padding-left: 1em;
+  }
+
+
   h1 {
     font-size: 130%;
     padding: 0;
