@@ -4,9 +4,9 @@ title: shipping to logstash with rsyslog
 tags: getting started, rsyslog
 ---
 
-* Goal: Show how to use rsyslog as a local agent to ship logs to logstash.
-* Target audience: Users who, for whatever reason, cannot or will not deploy the
-  logstash agent to some or all servers.
+* Goal: Use rsyslog as a local agent to ship logs to logstash.
+* Audience: Folks who cannot or will not deploy the logstash agent to some or
+  all servers.
 
 ## preface: why rsyslog?
 

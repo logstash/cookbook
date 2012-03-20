@@ -4,10 +4,8 @@ title: logging from cron
 tags:  cron
 ---
 
-# logging from cron
-
-* Goal: Take logs from cron jobs and ship it to logstash.
-* Target audience: Folks who use cron and want to direct log output somewhere
+* Goal: Ship cron logs to logstash.
+* Audience: Folks who use cron and want to direct log output somewhere
 
 ## preface: email sucks
 
