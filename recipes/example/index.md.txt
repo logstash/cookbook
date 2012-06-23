@@ -20,7 +20,7 @@ Get rolling with your topic.
 You can use `{% include_code example.txt %}` on a line by itself to display
 files like config files, etc, right in the page. It'll show up like this:
 
-{% include_code example.txt %}o
+{% include_code example.txt %}
 
 # Conclusions
 
