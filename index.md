@@ -30,7 +30,7 @@ Fork [this project](https://github.com/logstash/cookbook) and send pull requests
 
 ## [Your Recipe Here!](https://github.com/logstash/cookbook)
 
-Seriously!
+Seriously! 
 
 ### Contribute!
 
@@ -43,6 +43,6 @@ for fixes or new content!
 
 ### Getting Help
 
-If you aren't finding your answers here, you might consider asking for help
+If you aren't finding answers here, you might consider asking for help
 in the logstash IRC channel (#logstash on the freenode irc netowrk) or on the
-[mailing list](http://groups.google.com/group/logstash-users)
+[mailing list](http://groups.google.com/group/logstash-users).
