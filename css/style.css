@@ -459,22 +459,28 @@ h1, h2, h3 {
   border-bottom-right-radius: 0px;
   padding: 2px;
   padding-left: 10px;
+  overflow: hidden;
   color: black;
 }
-/* line 310, ../sass/style.scss */
+/* line 311, ../sass/style.scss */
 .article pre.code-header * {
   color: black;
 }
-/* line 315, ../sass/style.scss */
+/* line 316, ../sass/style.scss */
 .article pre.code {
   margin-top: 0px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-top: 0px;
 }
-/* line 322, ../sass/style.scss */
+/* line 323, ../sass/style.scss */
+.article pre.wrap {
+  white-space: pre-wrap;
+  overflow: auto;
+}
+/* line 328, ../sass/style.scss */
 .article pre {
-  overflow: scroll-x;
+  overflow-x: scroll;
   max-width: 100%;
   border: 1px solid #8bd078;
   color: white;
