@@ -84,10 +84,10 @@ $(document).ready(function() {
   }
 
   Site.template = function(element) {
-    var template_block_re = /^{% *(.*) *%}$/;
+    var template_block_re = /^{% *(.*?) *%}$/;
     var blocks = $("p", element).filter(function() { 
       return template_block_re.test(this.innerHTML) ;
-    })
+    });
     for (var i = 0; i < blocks.length; i++) {
       var block = blocks[i];
       var code = template_block_re.exec(block.innerHTML)[1];
@@ -97,18 +97,31 @@ $(document).ready(function() {
         /* Call 'Site.template.somefunc(args ...)' with the 
          * element to replace as 'this' */
         Site.template[func].apply($(block), args);
+        console.log(args);
       } else {
         $(block).append("<i>(Unknown template function '" + func + "')</i>");
       }
     }
   } /* Site.template */
 
-  Site.template.include_code = function(element, file) {
-    //var self = this;
+  Site.template.include_code = function(file) {
+    var self = this;
+    self.empty();
+
+    var header = $("<pre></pre>");
+    header.append("# ");
+    var link = $("<a></a>");
+    link.attr("href", file);
+    link.append(file);
+    header.append(link);
+    header.addClass("code-header");
+    self.append(header)
+    
     $.ajax(file).done(function(content) {
-      //var text = $("<pre></pre>").append("" + content);
-      //console.log(text);
-      //self.empty().append(text);
+      var text = $("<pre></pre>");
+      text.addClass("code");
+      text.append(document.createTextNode(content));
+      self.append(text);
     });
   } /* Site.template.include_code */
 

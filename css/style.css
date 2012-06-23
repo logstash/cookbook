@@ -42,7 +42,7 @@
 }
 
 /* line 37, ../sass/_palette.scss */
-.secondary-a-4 {
+.secondary-a-4, .article pre.code-header {
   background-color: #4fbdaa;
 }
 
@@ -452,11 +452,30 @@ h1, h2, h3 {
   font-weight: bold;
   padding-right: 5px;
 }
-/* line 303, ../sass/style.scss */
+/* line 302, ../sass/style.scss */
+.article pre.code-header {
+  margin-bottom: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  color: black;
+}
+/* line 308, ../sass/style.scss */
+.article pre.code-header * {
+  color: black;
+}
+/* line 313, ../sass/style.scss */
+.article pre.code {
+  margin-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: 0px;
+}
+/* line 320, ../sass/style.scss */
 .article pre {
   overflow: scroll-x;
   max-width: 100%;
   border: 1px solid #8bd078;
+  color: white;
   margin-left: 1em;
   border-radius: 8px;
   padding: 10px;

@@ -299,14 +299,33 @@ h1, h2, h3 {
     }
   }
 
+  pre.code-header {
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    @extend .secondary-a-4;
+    color: black;
+    * {
+      color: black;
+    }
+  }
+
+  pre.code {
+    margin-top: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top: 0px;
+  }
 
   pre {
     overflow: scroll-x;
     max-width: 100%;
     border: 1px solid $primary-5;
+    color: white;
     margin-left: 1em;
     @extend .primary-2;
     border-radius: 8px;
     padding: 10px;
   }
+
 } /* .article */
