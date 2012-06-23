@@ -1,118 +1,26 @@
 ---
 layout: article
-title: example
+title: sample article title
+tags: relevant article tags
 ---
 
-* Goal: Win.
-* Audience: You lovely people.
+* Goal: What will reading this article accomplish?
+* Audience: Who should be reading this?
 
-# h1.1
+# First Header
 
-TESTING WEB EDITING
+Some introductory content. Describe some background, give info on the problem
+you're trying to solve, and include any relevant links that will help.
 
-Nulla facilisi. Etizzle fo shizzle my nizzle shizznit neque. Vestibulizzle
-vulputate brizzle id maurizzle. Yo accumsizzle odio izzle sheezy. Curabitizzle
-owned izzle vel lectizzle. Crizzle laorizzle, we gonna chung dope pizzle
-tincidunt, doggy sizzle shizznit orci, eu placerizzle quam maurizzle eget mi.
-Etizzle adipiscing, lectus izzle shut the shizzle up aliquizzle, pizzle nisl
-lacinia bling bling, yo mamma fo fo shizzle fizzle bizzle purizzle. We gonna
-chung uhuh ... yih! hizzle shit. In pulvinar you son of a bizzle dolor. Brizzle
-leo enim, dang nec, facilisizzle fo, laoreet in, sem. Dizzle egizzle massa quis
-dawg blandizzle crunk. Vestibulizzle ullamcorpizzle fo shizzle the bizzle
-sizzle shut the shizzle up shiz. Gangsta quizzle mauris. Maecenas i'm in the
-shizzle. Vivamus fermentum consequizzle enizzle. Pellentesque doggy. Lorem
-ipsum shizzle my nizzle crocodizzle bizzle amizzle, consectetuer adipiscing
-elit. Maurizzle urna dawg, break yo neck, yall egizzle, pizzle a, fo eu, neque.
-Lorizzle yo mamma dolizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle
-amizzle, my shizz adipiscing elizzle.
+# Second Header
 
-## h2.1
+Get rolling with your topic.
 
-Boofron commodo erat ut urna. Nullam congue. Black viverra shizzle my nizzle
-crocodizzle dui. Quisque sit rizzle purus bizzle leo daahng dawg shut the
-shizzle up. Shizzle my nizzle crocodizzle potenti. Black at crackalackin vitae
-that's the shizzle tincidunt tellivizzle. Sizzle gravida tempizzle go to
-hizzle. In dawg erizzle et dope. Sizzle malesuada. Boofron vitae da bomb sizzle
-diam mollizzle daahng dawg. Nulla fo shizzle. Nullizzle you son of a bizzle
-quizzle boofron massa molestie dizzle. Nullizzle sagittizzle dawg hendrerizzle
-break yo neck, yall. Cras semper metizzle sed tellus. I saw beyonces tizzles
-and my pizzle went crizzle pretium boofron nizzle shut the shizzle up. Maecenas
-rutrum my shizz you son of a bizzle.
+You can use `{% include_code example.txt %}` on a line by itself to display
+files like config files, etc, right in the page. It'll show up like this:
 
-## h2.2
+{% include_code example.txt %}o
 
-Nulla facilisi. Etizzle fo shizzle my nizzle shizznit neque. Vestibulizzle
-vulputate brizzle id maurizzle. Yo accumsizzle odio izzle sheezy. Curabitizzle
-owned izzle vel lectizzle. Crizzle laorizzle, we gonna chung dope pizzle
-tincidunt, doggy sizzle shizznit orci, eu placerizzle quam maurizzle eget mi.
-Etizzle adipiscing, lectus izzle shut the shizzle up aliquizzle, pizzle nisl
-lacinia bling bling, yo mamma fo fo shizzle fizzle bizzle purizzle. We gonna
-chung uhuh ... yih! hizzle shit. In pulvinar you son of a bizzle dolor. Brizzle
-leo enim, dang nec, facilisizzle fo, laoreet in, sem. Dizzle egizzle massa quis
-dawg blandizzle crunk. Vestibulizzle ullamcorpizzle fo shizzle the bizzle
-sizzle shut the shizzle up shiz. Gangsta quizzle mauris. Maecenas i'm in the
-shizzle. Vivamus fermentum consequizzle enizzle. Pellentesque doggy. Lorem
-ipsum shizzle my nizzle crocodizzle bizzle amizzle, consectetuer adipiscing
-elit. Maurizzle urna dawg, break yo neck, yall egizzle, pizzle a, fo eu, neque.
-Lorizzle yo mamma dolizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle
-amizzle, my shizz adipiscing elizzle.
+# Conclusions
 
-### h3.1
-
-Nulla facilisi. Etizzle fo shizzle my nizzle shizznit neque. Vestibulizzle
-vulputate brizzle id maurizzle. Yo accumsizzle odio izzle sheezy. Curabitizzle
-owned izzle vel lectizzle. Crizzle laorizzle, we gonna chung dope pizzle
-tincidunt, doggy sizzle shizznit orci, eu placerizzle quam maurizzle eget mi.
-Etizzle adipiscing, lectus izzle shut the shizzle up aliquizzle, pizzle nisl
-lacinia bling bling, yo mamma fo fo shizzle fizzle bizzle purizzle. We gonna
-chung uhuh ... yih! hizzle shit. In pulvinar you son of a bizzle dolor. Brizzle
-leo enim, dang nec, facilisizzle fo, laoreet in, sem. Dizzle egizzle massa quis
-dawg blandizzle crunk. Vestibulizzle ullamcorpizzle fo shizzle the bizzle
-sizzle shut the shizzle up shiz. Gangsta quizzle mauris. Maecenas i'm in the
-shizzle. Vivamus fermentum consequizzle enizzle. Pellentesque doggy. Lorem
-ipsum shizzle my nizzle crocodizzle bizzle amizzle, consectetuer adipiscing
-elit. Maurizzle urna dawg, break yo neck, yall egizzle, pizzle a, fo eu, neque.
-Lorizzle yo mamma dolizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle
-amizzle, my shizz adipiscing elizzle.
-
-## h2.3
-
-Nulla facilisi. Etizzle fo shizzle my nizzle shizznit neque. Vestibulizzle
-vulputate brizzle id maurizzle. Yo accumsizzle odio izzle sheezy. Curabitizzle
-owned izzle vel lectizzle. Crizzle laorizzle, we gonna chung dope pizzle
-tincidunt, doggy sizzle shizznit orci, eu placerizzle quam maurizzle eget mi.
-Etizzle adipiscing, lectus izzle shut the shizzle up aliquizzle, pizzle nisl
-lacinia bling bling, yo mamma fo fo shizzle fizzle bizzle purizzle. We gonna
-chung uhuh ... yih! hizzle shit. In pulvinar you son of a bizzle dolor. Brizzle
-leo enim, dang nec, facilisizzle fo, laoreet in, sem. Dizzle egizzle massa quis
-dawg blandizzle crunk. Vestibulizzle ullamcorpizzle fo shizzle the bizzle
-sizzle shut the shizzle up shiz. Gangsta quizzle mauris. Maecenas i'm in the
-shizzle. Vivamus fermentum consequizzle enizzle. Pellentesque doggy. Lorem
-ipsum shizzle my nizzle crocodizzle bizzle amizzle, consectetuer adipiscing
-elit. Maurizzle urna dawg, break yo neck, yall egizzle, pizzle a, fo eu, neque.
-Lorizzle yo mamma dolizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle
-amizzle, my shizz adipiscing elizzle.
-
-### h3.1
-
-Nulla facilisi. Etizzle fo shizzle my nizzle shizznit neque. Vestibulizzle
-vulputate brizzle id maurizzle. Yo accumsizzle odio izzle sheezy. Curabitizzle
-owned izzle vel lectizzle. Crizzle laorizzle, we gonna chung dope pizzle
-tincidunt, doggy sizzle shizznit orci, eu placerizzle quam maurizzle eget mi.
-Etizzle adipiscing, lectus izzle shut the shizzle up aliquizzle, pizzle nisl
-lacinia bling bling, yo mamma fo fo shizzle fizzle bizzle purizzle. We gonna
-chung uhuh ... yih! hizzle shit. In pulvinar you son of a bizzle dolor. Brizzle
-leo enim, dang nec, facilisizzle fo, laoreet in, sem. Dizzle egizzle massa quis
-dawg blandizzle crunk. Vestibulizzle ullamcorpizzle fo shizzle the bizzle
-sizzle shut the shizzle up shiz. Gangsta quizzle mauris. Maecenas i'm in the
-shizzle. Vivamus fermentum consequizzle enizzle. Pellentesque doggy. Lorem
-ipsum shizzle my nizzle crocodizzle bizzle amizzle, consectetuer adipiscing
-elit. Maurizzle urna dawg, break yo neck, yall egizzle, pizzle a, fo eu, neque.
-Lorizzle yo mamma dolizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle
-amizzle, my shizz adipiscing elizzle.
-
-### h3.n
-### h3.n
-### h3.n
-### h3.n
-### h3.n
+Don't forget to conclude!
