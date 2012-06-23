@@ -83,6 +83,34 @@ $(document).ready(function() {
     });
   }
 
+  Site.template = function(element) {
+    var template_block_re = /^{% *(.*) *%}$/
+    var blocks = $("p", element).filter(function() { 
+      return template_block_re.test(this.innerHTML) 
+    })
+    for (var i = 0; i < blocks.length; i++) {
+      var block = blocks[i]
+      var code = template_block_re.exec(block.innerHTML)[1]
+      var args = code.split(/\s+/)
+      var func = args.shift
+      if (typeof(Site.template[func]) === "function") {
+        /* Call 'Site.template.somefunc(args ...)' with the 
+         * element to replace as 'this' */
+        Site.template[func].apply($(block), args);
+      } else {
+        $(block).append("<i>(Unknown template function '" + func + "')</i>");
+      }
+    }
+  } /* Site.template */
+
+  Site.template.include_code = function(element, file) {
+    var self = this;
+    $.ajax(file).done(function(content) {
+      var text = $("<pre>").html(content);
+      self.append(text);
+    })
+  } /* Site.template.include_code */
+
   jQuery.fn.linkify = function(selector) {
     this.delegate(selector, "click", function(event) {
       event.preventDefault();
