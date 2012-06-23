@@ -41,4 +41,4 @@ You can view any of the markdown files for this site to see how the article is
 done. As an example, check out [this example](recipes/example). Here's the code
 for that example:
 
-{% include_code recipes/example/index.md %}
+{% include_code recipes/example/index.md.txt %}
