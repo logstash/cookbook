@@ -303,6 +303,8 @@ h1, h2, h3 {
     margin-bottom: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    padding: 2px;
+    padding-left: 10px;
     @extend .secondary-a-4;
     color: black;
     * {
@@ -323,6 +325,7 @@ h1, h2, h3 {
     border: 1px solid $primary-5;
     color: white;
     margin-left: 1em;
+    margin-right: 1em;
     @extend .primary-2;
     border-radius: 8px;
     padding: 10px;
