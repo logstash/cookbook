@@ -502,5 +502,10 @@ h1, h2, h3 {
   border-radius: 8px;
   padding: 10px;
 }
+/* line 353, ../sass/style.scss */
+.article a {
+  color: inherit;
+  text-decoration: underline;
+}
 
 /* .article */
