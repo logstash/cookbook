@@ -42,15 +42,25 @@
         {{ site.title }}
       </a>
     </span>
-    <span class="edit-this-page">
-      <script>
-        document.writeln(
-          '<a href="https://github.com/{{ site.repo }}/edit/{{ site.branch }}/'
-            + '{{page.url}}'.replace('.html', '.md').replace(/^\//, '') 
-            + '">[edit this page]</a>'
-          );
-      </script>
-    </span>
+    <span class="float-right">
+      <div class="edit-this-page">
+        <script>
+          document.writeln(
+            '<a href="https://github.com/{{ site.repo }}/edit/{{ site.branch }}/'
+              + '{{page.url}}'.replace('.html', '.md').replace(/^\//, '') 
+              + '">[edit this page]</a>'
+            );
+        </script>
+      </div>
+      <!-- I'll work on search later. Maybe will just use google site search.
+      <div class="search">
+        <form method="GET" action="{{site.baseurl}}/search.html">
+          <input id="search-field" type="text" name="q" placeholder="Search"></input>
+          <input type="submit">
+        </form>
+      </div>
+      -->
+  </span>
   </header>
 
   {{ content }}
