@@ -39,7 +39,7 @@ $(document).ready(function() {
     list = $("<ol>");
     $(selector).each(function(i, element) {
       var el = $(element);
-      console.log($(element));
+      //console.log($(element));
       var entry = $("<li>");
       var link = $("<a>").attr("href", "#" + el.text()).text(el.text());
       /* Add a 'topic-h2' or similar class */
@@ -84,15 +84,15 @@ $(document).ready(function() {
   }
 
   Site.template = function(element) {
-    var template_block_re = /^{% *(.*) *%}$/
+    var template_block_re = /^{% *(.*) *%}$/;
     var blocks = $("p", element).filter(function() { 
-      return template_block_re.test(this.innerHTML) 
+      return template_block_re.test(this.innerHTML) ;
     })
     for (var i = 0; i < blocks.length; i++) {
-      var block = blocks[i]
-      var code = template_block_re.exec(block.innerHTML)[1]
-      var args = code.split(/\s+/)
-      var func = args.shift
+      var block = blocks[i];
+      var code = template_block_re.exec(block.innerHTML)[1];
+      var args = code.split(/\s+/);
+      var func = args.shift();
       if (typeof(Site.template[func]) === "function") {
         /* Call 'Site.template.somefunc(args ...)' with the 
          * element to replace as 'this' */
@@ -104,11 +104,12 @@ $(document).ready(function() {
   } /* Site.template */
 
   Site.template.include_code = function(element, file) {
-    var self = this;
+    //var self = this;
     $.ajax(file).done(function(content) {
-      var text = $("<pre>").html(content);
-      self.append(text);
-    })
+      //var text = $("<pre></pre>").append("" + content);
+      //console.log(text);
+      //self.empty().append(text);
+    });
   } /* Site.template.include_code */
 
   jQuery.fn.linkify = function(selector) {
