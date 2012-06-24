@@ -22,6 +22,10 @@ html {
     border-left: 1px solid black;
     border-right: 1px solid black;
     font-family: "Gudea", Helvetica, Arial, sans-serif;
+    @media (max-width: 400px) {
+      /* iphones and other small screens */
+      font-size: 10pt;
+    }
     font-size: 12pt;
   } /* body */
 } /* html */
@@ -223,10 +227,10 @@ h1, h2, h3 {
   @extend .primary-1; 
 
   .inner {
-    padding: 40px;
     @media (max-width: 400px) {
-      padding: 5px !important;
+      padding: 5px;
     }
+    padding: 40px;
     padding-top: 1em;
     padding-bottom: 1em;
   }
@@ -313,7 +317,9 @@ h1, h2, h3 {
   }
 
   pre.code-header {
+    margin-top: 0px; /* for 'view plain text' link */
     margin-bottom: 0px;
+    border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     padding: 2px;
@@ -338,16 +344,56 @@ h1, h2, h3 {
     overflow: auto;
   }
 
+  .has-view-text-link {
+    margin-top: 0;
+  }
+
   pre {
-    overflow-x: auto;
     max-width: 100%;
     border: 1px solid $primary-5;
     color: white;
+    @media (max-width: 400px) {
+      /* We'll insert 'view plain text' links instead of offering scrolling */
+      margin-left: 0px;
+      margin-right: 0px;
+      overflow-x: hidden;
+    }
+    margin-left: 0px;
+    margin-right: 0px;
+    border-top-right-radius: 0px;
+    overflow-x: auto;
     margin-left: 1em;
     margin-right: 1em;
     @extend .primary-2;
     border-radius: 8px;
     padding: 10px;
+  }
+
+  /* The 'view plain text' boxes */
+  div.plain-text-link {
+    @media (min-width: 400px) {
+      //display: none;
+    }
+    text-align: right;
+    width: 100%;
+    margin-bottom: -1px;
+    padding: 0px;
+    /* The 'view plain text' link */
+    a {
+      padding-left: 1em;
+      padding-right: 1em;
+      @media (min-width: 400px) {
+        margin-right: 1em; /* match <pre> tag margin */
+      }
+      @extend .primary-2;
+      border-left: 1px solid $primary-5;
+      border-right: 1px solid $primary-5;
+      border-top: 1px solid $primary-5;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
   }
 
   a {

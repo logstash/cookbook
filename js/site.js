@@ -81,7 +81,7 @@ $(document).ready(function() {
       var anchor = $("<a>").attr("name", el.text());
       $(this).prepend(anchor);
     });
-  }
+  };
 
   Site.template = function(element) {
     var template_block_re = /^{% *(.*?) *%}$/;
@@ -102,7 +102,7 @@ $(document).ready(function() {
         $(block).append("<i>(Unknown template function '" + func + "')</i>");
       }
     }
-  } /* Site.template */
+  }; /* Site.template */
 
   Site.template.include_code = function(file) {
     var self = this;
@@ -122,8 +122,22 @@ $(document).ready(function() {
       text.addClass("code");
       text.append(document.createTextNode(content));
       self.append(text);
+      Site.add_view_plain_text_link(self);
     });
-  } /* Site.template.include_code */
+  }; /* Site.template.include_code */
+
+  Site.add_view_plain_text_link = function(jq) {
+    jq.each(function() { 
+      /* btoa() convrts text to base64 */
+      var data_url = "data:text/plain;base64," + btoa($(this).text());
+      var plain_text_view = $("<a></a>");
+      plain_text_view.attr("href", data_url);
+      plain_text_view.append("view plain text")
+      var div = $("<div>").addClass("plain-text-link").append(plain_text_view)
+      div.insertBefore(this);
+      $(this).addClass("has-view-text-link");
+    });
+  };
 
   jQuery.fn.linkify = function(selector) {
     this.delegate(selector, "click", function(event) {
