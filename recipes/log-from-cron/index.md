@@ -22,8 +22,8 @@ logger is a tool that reads data on standard input. Here's an example use:
 
     echo "Hello world" | logger -t sample
 
-Logger writes syslog POSIX api, so your local syslog daemon should pick it up,
-and you can usually see the result in /var/log/messages:
+Logger uses the syslog(3) POSIX api, so your local syslog daemon should pick it
+up, and you can usually see the result in /var/log/messages:
 
     Feb 26 23:07:08 seven sample: Hello world
 
@@ -43,3 +43,17 @@ For this example, we will be logging output of an old-file cleaner:
 
 Because the above uses the '-t' flag on xargs, it will print each command
 invoked by xargs which is piped to logger and will be logged.
+
+# caveats
+
+The 'logger' tool that ships with most linux distros will chop messages into
+1024-byte lengths. This causes longer messages to be spread across multiple
+events. Frankly, this is pretty annoying and makes searching for longer logs
+quite difficult.
+
+Additionally, on Linux, syslog(3) writes to /dev/log which is a shared datagram
+socket with a limited (but tunable) buffer size. At high log-rates, you *will*
+lose events.
+
+If you have short log messages and your system logs at moderate rates or less,
+logger is a decent tool for solving this problem.
