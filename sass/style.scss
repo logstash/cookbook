@@ -352,12 +352,7 @@ h1, h2, h3 {
     max-width: 100%;
     border: 1px solid $primary-5;
     color: white;
-    @media (max-width: 400px) {
-      /* We'll insert 'view plain text' links instead of offering scrolling */
-      margin-left: 0px;
-      margin-right: 0px;
-      overflow-x: hidden;
-    }
+    overflow-x: auto;
     margin-left: 0px;
     margin-right: 0px;
     border-top-right-radius: 0px;
