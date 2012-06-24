@@ -514,6 +514,7 @@ h1, h2, h3 {
   max-width: 100%;
   border: 1px solid #8bd078;
   color: white;
+  overflow-x: auto;
   margin-left: 0px;
   margin-right: 0px;
   border-top-right-radius: 0px;
@@ -523,16 +524,7 @@ h1, h2, h3 {
   border-radius: 8px;
   padding: 10px;
 }
-@media (max-width: 400px) {
-  /* line 351, ../sass/style.scss */
-  .article pre {
-    /* We'll insert 'view plain text' links instead of offering scrolling */
-    margin-left: 0px;
-    margin-right: 0px;
-    overflow-x: hidden;
-  }
-}
-/* line 373, ../sass/style.scss */
+/* line 368, ../sass/style.scss */
 .article div.plain-text-link {
   text-align: right;
   width: 100%;
@@ -540,7 +532,7 @@ h1, h2, h3 {
   padding: 0px;
   /* The 'view plain text' link */
 }
-/* line 382, ../sass/style.scss */
+/* line 377, ../sass/style.scss */
 .article div.plain-text-link a {
   padding-left: 1em;
   padding-right: 1em;
@@ -553,13 +545,13 @@ h1, h2, h3 {
   font-weight: bold;
 }
 @media (min-width: 400px) {
-  /* line 382, ../sass/style.scss */
+  /* line 377, ../sass/style.scss */
   .article div.plain-text-link a {
     margin-right: 1em;
     /* match <pre> tag margin */
   }
 }
-/* line 399, ../sass/style.scss */
+/* line 394, ../sass/style.scss */
 .article a {
   color: inherit;
   text-decoration: underline;
