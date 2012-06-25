@@ -40,8 +40,8 @@ this version, you're all set.
 
 If you have an earlier version of logstash, follow these steps:
 
-1. [Download](https://raw.github.com/logstash/logstash/master/lib/logstash/filters/syslog_pri.rb
-"syslog_pri filter plugin") the plugin from github.
+1. [Download](https://raw.github.com/logstash/logstash/master/lib/logstash/filters/syslog_pri.rb) 
+  the plugin from github.
 1. Create a directory named `logstash/filters` and save the plugin into it
 1. Tell logstash about it (`pluginpath` should contain `logstash/filters`):
 
