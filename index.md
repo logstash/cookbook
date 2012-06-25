@@ -44,5 +44,5 @@ for fixes or new content!
 ### Getting Help
 
 If you aren't finding answers here, you might consider asking for help
-in the logstash IRC channel (#logstash on the freenode irc netowrk) or on the
+in the logstash IRC channel (#logstash on the freenode IRC network) or on the
 [mailing list](http://groups.google.com/group/logstash-users).
