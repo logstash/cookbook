@@ -20,9 +20,9 @@ Got cron jobs? Learn about how to take the output from those jobs and ship them 
 Want to run logstash as a system service? This cookbook entry will show you how
 to run logstash from the upstart system daemon (comes with Ubuntu).
 
-## [Your Recipe Here!](https://github.com/logstash/cookbook)
+## [parsing syslog](recipes/syslog-pri)
 
-Contribute! :)
+Parse syslog messages!
 
 ## [Your Recipe Here!](https://github.com/logstash/cookbook)
 
@@ -30,7 +30,7 @@ Fork [this project](https://github.com/logstash/cookbook) and send pull requests
 
 ## [Your Recipe Here!](https://github.com/logstash/cookbook)
 
-Seriously! 
+Seriously! Contribute! :)
 
 ### Contribute!
 
