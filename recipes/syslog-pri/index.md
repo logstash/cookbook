@@ -4,7 +4,7 @@ title: parsing syslog messages
 tags: getting started, syslog
 ---
 
-* Goal: Parse the syslog facility, severity, timestamp and host
+* Goal: Parse the syslog facility, severity, timestamp, host, and program
 * Audience: Anyone sending RFC3164 syslog messages to logstash
 
 # preface: parsing syslog
@@ -31,6 +31,7 @@ for the other metadata items.
 * Parse syslog's PRI field
 * Extract the Timestamp
 * Extract the Host
+* Extract the Program Details
 * If it doesn't work
 
 # prerequisites
@@ -100,6 +101,24 @@ name, storing the remainder away
 1. Creates a new logstash field containing the host name
 1. Overwrites the logstash message with this stored remainder of the syslog
 line
+
+# extract the program details
+
+After parsing the hedaer, the remainder of the message body consists of a tag
+part containing program details then the actual message. We want to parse the
+tag (and PID if it's there), and save them in to a new logstash field.
+
+The following config snippet should go in the filter section of your config:
+
+{% include_code program.conf %}
+
+What this code does is:
+
+1. Removes a field at the start of the syslog line which looks like a program
+tag and optional pid, storing the remainder away
+1. If that is successful, overwrites the logstash message with the stored
+remainder of the syslog line, and tidies up after itself
+
 
 # if it doesn't work
 
