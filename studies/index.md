@@ -5,9 +5,11 @@ title: log studies
 
 # Logs in the Wild
 
+it's like cultural anthropology, but for logs.
+
 ## [mysql](mysql)
 
-Go deep into mysql's wide set of logs.
+Go deep into mysql's logs. It has many to show you.
 
 ## [Your Recipe Here!](https://github.com/logstash/cookbook)
 
