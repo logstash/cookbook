@@ -3,7 +3,10 @@ layout: article
 title: mysql logs - a study
 ---
 
-# MySQL log study
+* Goal: Learn from mistakes and successes in mysql's log systems.
+* Audience: Folks interested in learning from live examples!
+
+# MySQL Log Study
 
 According to [mysql's docs][mysql-docs], there are about five different kinds of logs:
 
