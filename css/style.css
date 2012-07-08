@@ -7,7 +7,7 @@
 }
 
 /* line 30, ../sass/_palette.scss */
-.primary-2, .article .bullet-list, .article pre, .article div.plain-text-link a {
+.primary-2, .article .bullet-list, .article pre {
   background-color: #417b32;
 }
 
@@ -498,18 +498,17 @@ h1, h2, h3 {
   margin-top: 0px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  border-top: 0px;
 }
-/* line 342, ../sass/style.scss */
+/* line 341, ../sass/style.scss */
 .article pre.wrap {
   white-space: pre-wrap;
   overflow: auto;
 }
-/* line 347, ../sass/style.scss */
+/* line 346, ../sass/style.scss */
 .article .has-view-text-link {
   margin-top: 0;
 }
-/* line 351, ../sass/style.scss */
+/* line 350, ../sass/style.scss */
 .article pre {
   max-width: 100%;
   border: 1px solid #8bd078;
@@ -524,7 +523,7 @@ h1, h2, h3 {
   border-radius: 8px;
   padding: 10px;
 }
-/* line 368, ../sass/style.scss */
+/* line 367, ../sass/style.scss */
 .article div.plain-text-link {
   text-align: right;
   width: 100%;
@@ -532,10 +531,16 @@ h1, h2, h3 {
   padding: 0px;
   /* The 'view plain text' link */
 }
-/* line 377, ../sass/style.scss */
+/* line 376, ../sass/style.scss */
 .article div.plain-text-link a {
   padding-left: 1em;
   padding-right: 1em;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #325e26), color-stop(100%, #417b32));
+  background-image: -webkit-linear-gradient(top, #325e26 0%, #417b32 100%);
+  background-image: -moz-linear-gradient(top, #325e26 0%, #417b32 100%);
+  background-image: -o-linear-gradient(top, #325e26 0%, #417b32 100%);
+  background-image: -ms-linear-gradient(top, #325e26 0%, #417b32 100%);
+  background-image: linear-gradient(top, #325e26 0%, #417b32 100%);
   border-left: 1px solid #8bd078;
   border-right: 1px solid #8bd078;
   border-top: 1px solid #8bd078;
@@ -545,13 +550,13 @@ h1, h2, h3 {
   font-weight: bold;
 }
 @media (min-width: 400px) {
-  /* line 377, ../sass/style.scss */
+  /* line 376, ../sass/style.scss */
   .article div.plain-text-link a {
     margin-right: 1em;
     /* match <pre> tag margin */
   }
 }
-/* line 394, ../sass/style.scss */
+/* line 393, ../sass/style.scss */
 .article a {
   color: inherit;
   text-decoration: underline;
