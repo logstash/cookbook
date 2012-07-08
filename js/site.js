@@ -135,7 +135,7 @@ $(document).ready(function() {
       plain_text_view.append("view plain text")
       var div = $("<div>").addClass("plain-text-link").append(plain_text_view)
       div.insertBefore(this);
-      $(this).addClass("has-view-text-link");
+      $(this).addClass("has-view-text-link code");
     });
   };
 

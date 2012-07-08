@@ -336,7 +336,6 @@ h1, h2, h3 {
     margin-top: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border-top: 0px;
   }
 
   pre.wrap {
@@ -380,7 +379,7 @@ h1, h2, h3 {
       @media (min-width: 400px) {
         margin-right: 1em; /* match <pre> tag margin */
       }
-      @extend .primary-2;
+      @include background-image(linear-gradient(top, darken($primary-2, 8%) 0%, $primary-2 100%));
       border-left: 1px solid $primary-5;
       border-right: 1px solid $primary-5;
       border-top: 1px solid $primary-5;
