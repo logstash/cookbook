@@ -108,6 +108,9 @@ And in the general query log:
 
 ## Slow Query Log
 
+The slow query log contains slow queries as well as "possibly slow" queries
+(ones made without index hits)
+
 ## Binary Log
 
 ## Relay Log
