@@ -57,3 +57,8 @@ lose events.
 
 If you have short log messages and your system logs at moderate rates or less,
 logger is a decent tool for solving this problem.
+
+# further reading
+
+If you're interested in other good cron practices, check out this 
+[sysdavent article](http://sysadvent.blogspot.com/2009/12/cron-practices.html) about cron practices.
