@@ -24,9 +24,9 @@ to run logstash from the upstart system daemon (comes with Ubuntu).
 
 Parse syslog messages!
 
-## [Your Recipe Here!](https://github.com/logstash/cookbook)
+## [apache json logs](recipes/apache-json-logs/)
 
-Fork [this project](https://github.com/logstash/cookbook) and send pull requests.
+Make apache output json for access logs for easy import into logstash.
 
 ## [Your Recipe Here!](https://github.com/logstash/cookbook)
 
