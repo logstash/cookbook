@@ -104,7 +104,7 @@ line
 
 # extract the program details
 
-After parsing the hedaer, the remainder of the message body consists of a tag
+After parsing the header, the remainder of the message body consists of a tag
 part containing program details then the actual message. We want to parse the
 tag (and PID if it's there), and save them in to a new logstash field.
 
