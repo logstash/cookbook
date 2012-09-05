@@ -96,4 +96,10 @@ reads the apache log and verifies that all the entries parse as valid JSON.
     Verifying valid JSON
     Successful: 10000
 
-You can see the code for this test here: [apache.conf](test/apache.conf), [spam.rb](test/spam.rb), [check.rb](test/check.rb).
+Technically, what is verified above is that the ruby JSON parser can process
+the data. Since apache uses '\xNN' notation for escaping special characters,
+it is technically invalid 'JSON', but I've found may JSON parsers happily
+accept it.
+
+You can see the code for this test here: [apache.conf](test/apache.conf),
+[spam.rb](test/spam.rb), [check.rb](test/check.rb).
