@@ -79,3 +79,21 @@ Running logstash with the above config:
     }
 
 Voila!
+
+## Is it safe?
+
+Well, I tested with Apache/2.2.22 and found it appears quite safe. 
+
+What is safe? Well, safe meaning apache generates valid JSON.
+
+To test this, I made a simple apache config and two scripts; the first script
+spams apache with some pretty unsavory http requests, and the second script
+reads the apache log and verifies that all the entries parse as valid JSON.
+
+    % sh run.sh
+    Starting apache
+    Spamming apache with requests
+    Verifying valid JSON
+    Successful: 10000
+
+You can see the code for this test here: [apache.conf](test/apache.conf), [spam.rb](test/spam.rb), [check.rb](test/check.rb).
