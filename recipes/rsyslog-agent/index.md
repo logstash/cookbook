@@ -8,15 +8,6 @@ tags: getting started, rsyslog
 * Audience: Folks who cannot or will not deploy the logstash agent to some or
   all servers.
 
-#PLEASE READ: The syslog input is deprecated!!!!
-
-The syslog input is deprecated and will be removed in the 1.2.0 release. Please 
-consider using the [udp input](http://logstash.net/docs/1.1.1/inputs/udp) 
-and checkout [this recipe](http://cookbook.logstash.net/recipes/syslog-pri/ ) 
-for parsing syslog messages with grok.
-
-#END DEPRECATION NOTICE
-
 # preface: why rsyslog?
 
 It's an alternative to using logstash on your nodes to ship logs.
