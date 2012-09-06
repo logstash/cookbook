@@ -35,7 +35,7 @@ json schema I provided is specific to how logstash forms its own events.
 
 Reload the apache config, and I now see things like this in my logs:
 
-    { "@timestamp": "2012/08/22T14:35:19-0700",  "client": "127.0.0.1", "duration_usec": 532, "status": 404, "request": "/favicon.ico", "method": "GET", "referrer": "-" }
+    { "@timestamp": "2012-08-22T14:35:19-0700",  "client": "127.0.0.1", "duration_usec": 532, "status": 404, "request": "/favicon.ico", "method": "GET", "referrer": "-" }
 
 Apache's documentation explains how/why it escapes values:
 
@@ -75,7 +75,7 @@ Running logstash with the above config:
         "method"        => "GET",
         "referrer"      => "-"
       },
-      "@timestamp" => "2012/08/22T14:53:47-0700"
+      "@timestamp" => "2012-08-22T14:53:47-0700"
     }
 
 Voila!
