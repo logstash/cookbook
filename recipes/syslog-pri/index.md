@@ -28,10 +28,8 @@ for the other metadata items.
 # agenda
 
 * Prerequisites
-* Parse syslog's PRI field
-* Extract the Timestamp
-* Extract the Host
-* Extract the Program Details
+* Parsing BSD Syslog format
+* How it works
 * If it doesn't work
 
 # prerequisites
@@ -48,82 +46,49 @@ If you have an earlier version of logstash, follow these steps:
 
     % logstash --pluginpath . -d logstash.conf
 
-# parse syslog's PRI field
+# parsing BSD Syslog format
 
-The Header at the start of a syslog line encodes both the facility and
-severity of the message in one number, called the priority (or PRI). We need
-to strip off the PRI, extract the facility and severity, and save them as new
-logstash fields.
+The goal is to turn BSD syslog line in to a sensible Logstash event. To
+this end we need to parse the message, modify a few things, then clean
+up.
 
-The following config snippet should go in the filter section of your config:
+Here's what the complete configuration looks like:
 
-{% include_code strip_pri.conf %}
+{% include_code syslog.conf %}
 
-What this does is:
+# How it works
 
-1. Removes the PRI field from the syslog line, storing the remainder away
-1. Calls the bundled `syslog_pri` filter plugin to parse this field and extract
-the facility and severity values
-1. If that is successful, overwrites the logstash message with the stored
-remainder of the syslog line, and tidies up after itself
+Most of the heavy lifting is done by the `grok` filter at the start. It
+takes care of parsing the entire syslog message into various fields in
+the Logstash event. It also copies some information, like the time Logstash
+received the event, in to new fields. 
 
-# extract the timestamp
+The `syslog_pri` filter takes care of parsing the priority and facility
+number from the Logstash event. By default it looks for a field called
+`syslog_pri` and parses it to create new fields that contain the severity and
+facility.
 
-The next field in the syslog message header is the timestamp of the event. We
-want to make the logstash event timestamp equal to this (instead of the time
-when it was eventually received by logstash).
+Converting the timestamp of the syslog message is the task of the `date`
+filter. It looks for the `syslog_timestamp` field and tries to parse it
+using the formats given. If the parsing is successful, it will replace
+the `@timestamp` field of the Logstash event with time of the syslog
+message.
 
-The following config snippet should go in the filter section of your config:
+The first `mutate` filter replaces the Logstash event metadata with the
+correct data from the syslog message. Note that it only executes if the
+`grok` filter was successful. This allows for the original message to be
+preserved if parsing failed.
 
-{% include_code timestamp.conf %}
-
-What this does is:
-
-1. Removes a field at the start of the syslog line which looks like a
-timestsamp, storing the remainder away
-1. Overwrites the logstash message with this stored remainder of the syslog
-line
-1. Sets the logstash event timestamp to be the extracted timestamp
-
-# extract the host
-
-The next field in the syslog message header is the host which created the
-message. We want to remove this, and save it in a new logstash field.
-
-The following config snippet should go in the filter section of your config:
-
-{% include_code host.conf %}
-
-What this does is:
-
-1. Removes a field at the start of the syslog line which looks like a host
-name, storing the remainder away
-1. Creates a new logstash field containing the host name
-1. Overwrites the logstash message with this stored remainder of the syslog
-line
-
-# extract the program details
-
-After parsing the header, the remainder of the message body consists of a tag
-part containing program details then the actual message. We want to parse the
-tag (and PID if it's there), and save them in to a new logstash field.
-
-The following config snippet should go in the filter section of your config:
-
-{% include_code program.conf %}
-
-What this code does is:
-
-1. Removes a field at the start of the syslog line which looks like a program
-tag and optional pid, storing the remainder away
-1. If that is successful, overwrites the logstash message with the stored
-remainder of the syslog line, and tidies up after itself
-
+The second `mutate` filter removes redundant fields from the logstash
+event. This helps save storage and reduces confusion for people looking
+at the event stream. It's not combined with the previous `mutate` filter
+because there's no guaranteed order of operation so the removes could
+happen before replace resulting in missing data.
 
 # if it doesn't work
 
 It may be that your syslog uses a format different from RFC 3164. For example
-the timstamp might be in a different format, or the facility and priority
+the timestamp might be in a different format, or the facility and priority
 might not be encoded numerically.
 
 By changing the `grok` filters above, and in particular the regular
@@ -136,3 +101,4 @@ You can also receive logs from different syslog servers using different
 formats, simply by tieing a series of filters to a `type` or `tag`.
 
 Please ask on the logstash IRC channel if you need any help.
+
