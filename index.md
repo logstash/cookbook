@@ -28,7 +28,7 @@ Parse syslog messages!
 
 Make apache output json for access logs for easy import into logstash.
 
-## [log shippers](recipes/log-shippers/))
+## [log shippers](recipes/log-shippers/)
 
 Learn about available tools for shipping logs to logstash in situations where
 you can't fit the logstash agent.
