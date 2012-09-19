@@ -34,19 +34,9 @@ for the other metadata items.
 
 # prerequisites
 
-Beginning with logstash 1.1.1 there is a new `syslog_pri` filter plugin. Using
-this version, you're all set.
+This recipe requires logstash 1.1.1 or newer.
 
-If you have an earlier version of logstash, follow these steps:
-
-1. [Download](https://raw.github.com/logstash/logstash/master/lib/logstash/filters/syslog_pri.rb) 
-  the plugin from github.
-1. Create a directory named `logstash/filters` and save the plugin into it
-1. Tell logstash about it (`pluginpath` should contain `logstash/filters`):
-
-    % logstash --pluginpath . -d logstash.conf
-
-# parsing BSD Syslog format
+# parsing bsd syslog format
 
 The goal is to turn BSD syslog line in to a sensible Logstash event. To
 this end we need to parse the message, modify a few things, then clean
