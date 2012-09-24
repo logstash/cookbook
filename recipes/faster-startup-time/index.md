@@ -7,6 +7,8 @@ tags:
 * Goal: Launch logstash faster to improve iteration time while working on your config
 * Audience: Logstash developers, administrators
 
+See also: https://logstash.jira.com/browse/LOGSTASH-563 ("Agent start time is stupid long")
+
 # baseline
 
 On my home box, this takes about 30 seconds:
