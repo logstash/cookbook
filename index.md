@@ -33,6 +33,10 @@ Make apache output json for access logs for easy import into logstash.
 Learn about available tools for shipping logs to logstash in situations where
 you can't fit the logstash agent.
 
+## [faster startup time](recipes/faster-startup-time/)
+
+Ways to speed up the logstash startup time.
+
 ### Contribute!
 
 This cookbook is for and by the logstash community. You can help! Click the
