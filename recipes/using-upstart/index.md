@@ -14,7 +14,7 @@ Upstart ships with most modern Ubuntu distros. Here are the steps you need to us
 # upstart logstash config
 
 1. Put the config below in `/etc/init/logstash-agent.conf`
-2. To start it: `sudo initctl start logstash`
+2. To start it: `sudo initctl start logstash-agent`
 
 {% include_code logstash-agent.conf %}
 
