@@ -11,7 +11,7 @@ tags:
 
 On my box, a default startup does not allow ipv6 dns lookups as the default for java is preferring ipv4 over ipv6. So starting logstash with the following option:
 
-    java -Djava.net.preferIPv6Addresses=true -Xmx32m -jar /usr/local/logstash/logstash-1.1.1-monolithic.jar agent -f /etc/logstash/logstash.conf -l /var/log/logstash/logstash.log
+    java -Xmx32m -jar /usr/local/logstash/logstash-1.1.1-monolithic.jar agent -f /etc/logstash/logstash.conf -l /var/log/logstash/logstash.log
 
 results in dns lookups resolving to ipv4 instead of doing ipv6 -> ipv4.  
 
