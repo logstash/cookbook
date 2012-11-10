@@ -14,6 +14,7 @@ There are lots of ways to ship logs off of your servers -
 * [beaver](https://github.com/josegonzalez/beaver) - python, multiple outputs
 * [woodchuck](https://github.com/danryan/woodchuck) - ruby, multiple outputs
 * [awesant](https://github.com/bloonix/awesant) - perl, multiple outputs supported
+* [lumberjack](https://github.com/jordansissel/lumberjack) - C, encrypted+compressed transport
 * [syslog-shipper](https://github.com/jordansissel/syslog-shipper) - ruby, syslog tcp
 * [remote_syslog](https://github.com/papertrail/remote_syslog) - ruby, syslog tcp/tls
 * [Message::Passing](https://metacpan.org/module/Message::Passing) - perl, multiple inputs and outputs
