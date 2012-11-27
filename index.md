@@ -20,6 +20,10 @@ Got cron jobs? Learn about how to take the output from those jobs and ship them 
 Want to run logstash as a system service? This cookbook entry will show you how
 to run logstash from the upstart system daemon (comes with Ubuntu).
 
+## [running with init](recipes/using-init/)
+
+Run logstash as a service on your RHEL based system using this init script.
+
 ## [parsing syslog](recipes/syslog-pri)
 
 Parse syslog messages!
