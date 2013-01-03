@@ -1,11 +1,10 @@
-require "ap"
 describe "mysql logs" do
   extend LogStash::RSpec
 
   describe "slow query log" do
     # The logstash config goes here.
     # At this time, only filters are supported.
-    config File.read("mysql-slow.conf")
+    config File.read(File.join(File.dirname(__FILE__), "mysql-slow.conf"))
 
     data  = File.open(__FILE__)
     data.each { |line| break if line == "__END__\n" }
@@ -15,8 +14,8 @@ describe "mysql logs" do
     end
 
     sample events do
+      p subject
       event = subject.first
-      #ap event.to_hash
       insist { subject["user"] } == "amavis"
       insist { subject["host"] } == "randomhost.local"
       insist { subject["ip"] } == "10.1.22.33"
