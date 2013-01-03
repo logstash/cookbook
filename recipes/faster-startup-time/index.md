@@ -13,24 +13,24 @@ See also: https://logstash.jira.com/browse/LOGSTASH-563 ("Agent start time is st
 
 On my home box, this takes about 30 seconds:
 
-    java -Xmx32m -jar parts/logstash/logstash-1.1.1-monolithic.jar agent -f conf/logstash.conf
+    java -Xmx32m -jar logstash-1.1.1-monolithic.jar agent -f conf/logstash.conf
 
-# exploded jar
+You can see a full startup/shutdown time here where I"ll use a closed stdin to
+shutdown logstash:
 
-    unzip logstash-1.1.1-monolithic.jar and you can run this:
+    % time java -jar logstash-1.1.6-monolithic.jar agent -e 'input { stdin { type => foo } }' < /dev/null
+    27.17s user 0.69s system 111% cpu 24.887 total
 
-    logstash-1.1.1-monolithic% java -cp top/dir/of/unzip/ logstash.runner agent -f conf/logstash.conf
+# using the 'flatjar'
 
-This takes about 18 seconds for me.
+"flatjar" releases are packed differently in the jar file. This is done to improve startup times.
 
-# launch in ruby
+Starting with logstash 1.1.6, you can download these flatjar builds with a release:
 
-Notes from IRC:
+<http://logstash.objects.dreamhost.com/release/logstash-1.1.6-flatjar.jar>
 
-    <whack> bundle install and perhaps bundle exec ruby bin/logstash agent ...
+The startup time is much faster:
 
-    <whack> RUBYLIB=$PWD GEM_HOME=$PWD/gems ruby logstash/runner ...
+    % time java -jar logstash-1.1.6-flatjar.jar agent -e 'input { stdin { type => foo } }' < /dev/null   
+    8.27s user 0.19s system 129% cpu 6.532 total
 
-    <whack> I do dev work on it from git doing 'ruby bin/logstash agent .....'
-
-    <whack> but the fastest way *today* is to run from git and invoke ruby/jruby directly
