@@ -26,3 +26,8 @@ tags: service,windows
 
 
 Go to windows services to verify sure you have a service named "Logstash". Set the startup type to "Automatic" or "Automatic (delayed start)"
+
+
+Here are some other projects that allow you to run jar as a windows service:
+http://winrun4j.sourceforge.net/
+http://yajsw.sourceforge.net/
