@@ -42,10 +42,10 @@ One way to significantly shorten startup times is to unpack the jar before it's 
     java -cp logstash logstash.runner agent -f logstash.conf
     
 If you use any grok pattern names, running from the unpacked version will likely error with
-"Exception in thread "LogStash::Runner" org.jruby.exceptions.RaiseException: (PatternError) 
-pattern %{[PATTERN_NAME]} not defined. One way to fix this:
+'Exception in thread "LogStash::Runner" org.jruby.exceptions.RaiseException: (PatternError) 
+pattern %{[PATTERN_NAME]} not defined'. To fix this:
 
     ln -s logstash/patterns patterns
 
-Then, try running launching logstash as above again.
+Then, try running logstash as above once again.
 
