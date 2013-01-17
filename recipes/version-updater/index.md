@@ -27,10 +27,10 @@ If that complains about missing dependencies and you are running Ubuntu try inst
 
 There are two options, type of logstash to get (flatjar or monolithic) and location to store the file.
 
-    python logstash-updater.py monolithic /opt/logstash
+    python version-updater.py monolithic /opt/logstash
 
 You can set the defaults inside of the script if you want to run it without passing arguments.
 
 # Code
 
-{% include_code logstash-updater.py %}
+{% include_code version-updater.py %}
