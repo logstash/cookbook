@@ -4,28 +4,27 @@ title: running logstash as a windows service
 tags: service,windows
 ---
 
-* Goal: Start logstash on boot with on windows using nssm.
+* Goal: Start logstash on boot up.
 * Target audience: Users who have logstash agents on windows servers.
 
 # Service wrapper installation
 
-1. Download NSSM - the Non-Sucking Service Manager from http://nssm.cc and copy nssm.exe to a directory in your path like c:\windows.
-2. Copy logstash jar into c:\logstash
-3. Create directory c:\logstash\sincedb
-4. Create a batch file c:\logstash\logstash.bat
+- Download NSSM - the Non-Sucking Service Manager from http://nssm.cc and copy nssm.exe to a directory in your path like c:\windows.
+- Copy logstash jar into c:\logstash
+- Create directory c:\logstash\sincedb
+- Create a batch file c:\logstash\logstash.bat
+- Create c:\logstash\logstash.conf file 
+- Create the windows service by typing the following on the command line:  nssm install Logstash C:\logstash\logstash.bat
+
+Verify you have a service named "Logstash". Set the startup type to "Automatic" or "Automatic (delayed start)"
+
 
 {% include_code logstash.bat %}
 
 
-5. Create c:\logstash\logstash.conf file 
-
 {% include_code logstash.conf %}
 
 
-6. Create the windows service by typing the following on the command line:  nssm install Logstash C:\logstash\logstash.bat
-
-
-Verify you have a service named "Logstash". Set the startup type to "Automatic" or "Automatic (delayed start)"
 
 # Other Java service wrappers
 
