@@ -25,7 +25,6 @@ Verify you have a service named "Logstash". Set the startup type to "Automatic" 
 {% include_code logstash.conf %}
 
 
-
 # Other Java service wrappers
 
 http://winrun4j.sourceforge.net/
