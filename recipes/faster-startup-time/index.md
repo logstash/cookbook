@@ -33,4 +33,19 @@ The startup time is much faster:
 
     % time java -jar logstash-1.1.6-flatjar.jar agent -e 'input { stdin { type => foo } }' < /dev/null   
     8.27s user 0.19s system 129% cpu 6.532 total
+    
+# Unzipping the jar
+
+One way to significantly shorten startup times is to unpack the jar before it's run.
+
+    unzip -d logstash logstash.jar
+    java -cp logstash logstash.runner agent -f logstash.conf
+    
+If you use any grok pattern names, running from the unpacked version will likely error with
+'Exception in thread "LogStash::Runner" org.jruby.exceptions.RaiseException: (PatternError) 
+pattern %{[PATTERN_NAME]} not defined'. To fix this:
+
+    ln -s logstash/patterns patterns
+
+Then, try running logstash as above once again.
 
