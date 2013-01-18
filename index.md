@@ -49,6 +49,10 @@ Run logstash as a windows service
 
 Update your Logstash version with this simple script.
 
+## [Config snippets](recpipes/config-snippets/)
+
+Config snippets collected and provided by users
+
 ### Contribute!
 
 This cookbook is for and by the logstash community. You can help! Click the
