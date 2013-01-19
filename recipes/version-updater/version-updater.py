@@ -21,6 +21,9 @@ def get_args():
 
 
 def version_info(url, dir):
+    """ This method checks the available versions from the remote url as well
+    as the local version if it exists. """ 
+
     # Checking the Logstash version might take a while, be patient.
     response = urllib.urlopen(url).read().replace('<?xml version="1.0" encoding="UTF-8"?>','')
     response = response.replace(" xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"", "")
@@ -45,7 +48,7 @@ def version_info(url, dir):
 def updater(url, xmltree, current_version, args):
     # Version as key, with a dict as value. Example:
     # {'1.1.1': {'releasename': 'release/logstash-1.1.1-monolithic.jar'}}
-    available_versions = {'latest': '0.0.0'}
+    available_versions = {'latest': {'releasename': None, 'version': '0.0.0'}}
     
     version_parser = re.compile("release\/logstash-(.*)-monolithic\.jar")
 
@@ -53,42 +56,43 @@ def updater(url, xmltree, current_version, args):
         if args.version == "latest":
             user_version = "latest"
         else:
-            user_version = StrictVersion(args.version)
+            user_version = args.version
     except ValueError:
         sys.exit("Supplied value for version is incorrect or this script is outdated.")
 
+    # Iterating over the releases and putting them in a dict.
     for subtree in xmltree:
         for release in subtree.iterchildren():
             if release.tag == "Key":
                 release = str(release)
                 matching = re.search(version_parser, release)
                 if matching:
-                    available_versions[matching.group(1)] = {'releasename': release}
+                    available_versions[matching.group(1)] = {'releasename': release, 'version': matching.group(1)}
 
+    # Determine which version is the latest and assign it to available_versions['latest']
     for version in available_versions:
         if version != "latest":
-            # We should first determine what the latest version is
-            # by comparing the version one after another.
-            if StrictVersion(version) > StrictVersion(available_versions['latest']):
-                available_versions['latest'] = version
+            if StrictVersion(version) > StrictVersion(available_versions['latest']['version']):
+                available_versions['latest'] = available_versions[version]
 
-    if user_version:
-        print "You want the %s version, ok." % user_version 
-        print available_versions
-        new_version_url = url+available_versions[user_version]['releasename']
-        print new_version_url
-        urllib.urlretrieve(new_version_url, filename="%s/%s" % (args.dir, "logstash.jar"))
-    elif current_version != "0.0.0":
-        if StrictVersion(current_version) < StrictVersion(available_versions['latest']):
-            print "There is a newer version (%s) than the one you have (%s)" % (available_versions['latest'], current_version) 
-            new_version_url = url+available_versions[version]['releasename']
-            print new_version_url
+    try:
+        if user_version:
+            print "You want the %s version, ok." % user_version 
+            new_version_url = url+available_versions[user_version]['releasename']
             urllib.urlretrieve(new_version_url, filename="%s/%s" % (args.dir, "logstash.jar"))
-    else:
-        print "Let's get the latest one which is %s" % available_versions['latest']
-        new_version_url = url+available_versions['latest']['releasename']
-        print new_version_url
-        urllib.urlretrieve(new_version_url, filename="%s/%s" % (args.dir, "logstash.jar"))
+        elif current_version != "0.0.0":
+            if StrictVersion(current_version) < StrictVersion(available_versions['latest']):
+                print "There is a newer version (%s) than the one you have (%s)" % (available_versions['latest'], current_version) 
+                new_version_url = url+available_versions[version]['releasename']
+                urllib.urlretrieve(new_version_url, filename="%s/%s" % (args.dir, "logstash.jar"))
+        else:
+            print "Let's get the latest one which is %s" % available_versions['latest']
+            new_version_url = url+available_versions['latest']['releasename']
+            urllib.urlretrieve(new_version_url, filename="%s/%s" % (args.dir, "logstash.jar"))
+    except KeyError:
+        sys.exit("Not sure that version is available.")
+    except Exception, e:
+        sys.exit(e)
 
 
 def run():
