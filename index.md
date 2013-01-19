@@ -41,6 +41,9 @@ Ways to speed up the logstash startup time.
 
 Run logstash as a windows service
 
+## [version updater](recipes/version-updater/)
+
+Keep your logstash up to date with this script.
 
 ### Contribute!
 
