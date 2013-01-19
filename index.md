@@ -53,6 +53,10 @@ Update your Logstash version with this simple script.
 
 Config snippets collected and provided by users
 
+## [Puppet modules](recipes/puppet-modules/)
+
+Different puppet modules for Logstash and other software
+
 ### Contribute!
 
 This cookbook is for and by the logstash community. You can help! Click the
