@@ -49,6 +49,11 @@ Run logstash as a windows service
 
 Update your Logstash version with this simple script.
 
+## [slurp down central rsyslog server?](recipes/central-syslog/)
+
+Already have a centralized rsyslog server,  agent and indexer config to eat your logs.
+
+
 ### Contribute!
 
 This cookbook is for and by the logstash community. You can help! Click the
