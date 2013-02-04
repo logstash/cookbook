@@ -53,6 +53,9 @@ Update your Logstash version with this simple script.
 
 Already have a centralized rsyslog server,  agent and indexer config to eat your logs.
 
+## [removing Linux color codes from logs](recipes/color-codes/)
+
+Remove the color codes from Linux logs
 
 ### Contribute!
 
