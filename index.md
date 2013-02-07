@@ -57,6 +57,14 @@ Already have a centralized rsyslog server,  agent and indexer config to eat your
 
 Remove the color codes from Linux logs
 
+## [Config snippets](recipes/config-snippets/)
+
+Config snippets collected and provided by users
+
+## [Puppet modules](recipes/puppet-modules/)
+
+Different puppet modules for Logstash and other software
+
 ### Contribute!
 
 This cookbook is for and by the logstash community. You can help! Click the
