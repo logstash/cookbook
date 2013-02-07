@@ -47,7 +47,7 @@ Run logstash as a windows service
 
 ## [version updater](recipes/version-updater/)
 
-Update your Logstash version with this simple script.
+Keep your logstash up to date with this script.
 
 ## [slurp down central rsyslog server?](recipes/central-syslog/)
 

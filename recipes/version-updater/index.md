@@ -25,11 +25,22 @@ If that complains about missing dependencies and you are running Ubuntu try inst
 
 # Using the updater
 
-There are two options, type of logstash to get (flatjar or monolithic) and location to store the file.
+Below is the usage as printed by help.
 
-    python version-updater.py monolithic /opt/logstash
+    usage: version-updater.py [-h] [-d DIR] [-v VERSION]
 
-You can set the defaults inside of the script if you want to run it without passing arguments.
+    optional arguments:
+      -h, --help            show this help message and exit
+      -d DIR, --dir DIR     Give the location of your logstash directory, ex:
+                            /opt/logstash
+      -v VERSION, --version VERSION
+                            Which version do you want to install, ex: 1.
+
+As an example here is how to get version 1.1.8  downloaded to /opt/logstash:
+
+    python version-updater.py -d /opt/logstash -v 1.1.8
+
+You can set the defaults inside of the script if you want to run it without passing any arguments.
 
 # Code
 
