@@ -65,6 +65,10 @@ Config snippets collected and provided by users
 
 Different puppet modules for Logstash and other software
 
+## [The LogStash Book](http://www.logstashbook.com)
+
+An introductory LogStash book.
+
 ### Contribute!
 
 This cookbook is for and by the logstash community. You can help! Click the
