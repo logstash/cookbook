@@ -65,6 +65,11 @@ Config snippets collected and provided by users
 
 Different puppet modules for Logstash and other software
 
+## [Chef cookbooks](recipes/chef-cookbook/)
+
+Chef cookbooks for quickly setting up Logstash and friends
+
+
 ## [The LogStash Book](http://www.logstashbook.com)
 
 An introductory LogStash book.
