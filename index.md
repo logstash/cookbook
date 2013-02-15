@@ -69,6 +69,10 @@ Different puppet modules for Logstash and other software
 
 Chef cookbooks for quickly setting up Logstash and friends
 
+## [ StatsD metrics ](recipes/statsd-metrics/)
+
+StatsD plugin metrics explanation
+
 
 ## [The LogStash Book](http://www.logstashbook.com)
 
