@@ -11,52 +11,49 @@ tags: getting started, statsd, metrics, logstash
 
 I will show you with examples what the following StatsD metrics mean: **increment**, **timing**, **count**
 
-# Sample Case 1
+# Sample Case 1 ( count metric )
 
-We receive a number each second for a period of 10 seconds.
-
-Let's say that the starting moment is "t1".
+We receive a number each second for a period of 10 seconds. Let's say that the starting moment is "t1".
 
 As a table this will look like this:
 
- Moment  	Number      
- ----  		------------  
- t1     	1
- t1+1s    	2
- t1+2s		3
- t1+3s		4
- t1+4s		5
- t1+5s		6
- t1+6s		7
- t1+7s		8
- t1+8s		9
- t1+9s		10
+ Moment  | Number      
+ ----  		|:------------  
+ t1     	| 1
+ t1+1s   | 2
+ t1+2s		 | 3
+ t1+3s		 | 4
+ t1+4s		 | 5
+ t1+5s		 | 6
+ t1+6s		 | 7
+ t1+7s		 | 8
+ t1+8s		 | 9
+ t1+9s		 | 10
 
-Now the **count** metric will be equal to the sum of all number for our period of 10 seconds
+Now the **count** metric will be equal to the sum of all numbers for our period of 10 seconds
 
-> 1+2+3+4+5+6+7+8+9+10 = 55
+    1+2+3+4+5+6+7+8+9+10 = 55
 
-# Sample Case 2
+# Sample Case 2 (increment metric)
 
-We receive a status each second for a period of 10 seconds. **Status** is just a number. 
-For example lets take  HTTP statuses: 200, 404, 302
+We receive a status each second for a period of 10 seconds. **status** is just a number. 
 
-Let's say that the starting moment is "t1".
+For example lets take  HTTP statuses: *200*, *404*, *302*. Let's say that the starting moment is "t1".
 
 As a table this will look like this:
 
- Moment  	Status      
- ----  		------------  
- t1     	200
- t1+1s    	200
- t1+2s		404
- t1+3s		200
- t1+4s		200
- t1+5s		302
- t1+6s		200
- t1+7s		302
- t1+8s		200
- t1+9s		200
+ Moment  | Status      
+ ----  		|:------------  
+ t1     	| 200
+ t1+1s   | 200
+ t1+2s		 | 404
+ t1+3s		 | 200
+ t1+4s		 | 200
+ t1+5s		 | 302
+ t1+6s		 | 200
+ t1+7s		 | 302
+ t1+8s		 | 200
+ t1+9s		 | 200
 
 Now the **increment** metric will show how many times a given status is received for our period of 10 seconds.
 
@@ -66,25 +63,25 @@ In our case this will be:
 * Status 404: 1 times
 * Status 302: 2 times
 
-# Sample Case 3
+# Sample Case 3 ( timing metric )
 
 This case is a combination of case 1 and 2. We receive a status each second for a period of 10 seconds,
-but for each status comes with a number. Let's imagine that this number is the response time for a HTTP request.
+but each status comes with a second number. Let's imagine that this number is the response time for a HTTP request.
 
 As a table this will look like this:
 
- Moment  	Status	 Response Time      
- ----  		------	 -------------
- t1     	200		 15ms
- t1+1s    	200		 10ms
- t1+2s		404		 10ms
- t1+3s		200		 20ms
- t1+4s		200		 30ms
- t1+5s		302		 10ms
- t1+6s		200		 15ms
- t1+7s		302		 10ms
- t1+8s		200		 10ms
- t1+9s		200		 20ms
+ Moment  	| Status	 |Response Time      
+ ----  		 |:------	 |:-------------
+ t1     	 | 200		   | 15ms
+ t1+1s    |	200		   | 10ms
+ t1+2s		  | 404		   | 10ms
+ t1+3s		  | 200		   | 20ms
+ t1+4s		  | 200		   | 30ms
+ t1+5s		  | 302		   | 10ms
+ t1+6s		  | 200		   | 15ms
+ t1+7s		  | 302		   | 10ms
+ t1+8s		  | 200		   | 10ms
+ t1+9s		  | 200		   | 20ms
  
 Now the **timing** metric will show things like the highest, lowest, and mean response time for all requests for our period of 10 seconds.
 
@@ -96,21 +93,21 @@ In our case this will be:
 * Lowest: 10ms
 * Mean: 15+10+10+20+30+10+15+10+10+20 / 10 = 15ms
 
-# Sample Case 4
+# Sample Case 4 ( apache log )
 
 Now let's have the following excerpt form an apache access log file:
 
-> #Remote_host	Request_time				 Request							Status	Response_bytes	Response_time
-> 
-> 10.10.10.1 		[13/Feb/2013:10:27:02 +0200] "GET / HTTP/1.1" 					200  	"566"			10000
-> 10.10.10.1 		[13/Feb/2013:10:27:02 +0200] "GET /icons/blank.gif HTTP/1.1" 	304 	"195"			5000
-> 10.10.10.1 		[13/Feb/2013:10:27:02 +0200] "GET /icons/folder.gif HTTP/1.1" 	304 	"123"			4000
-> 10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET / HTTP/1.1" 					200 	"520"			11000
-> 10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/folder.gif HTTP/1.1" 	304 	"151"			6000
-> 10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/blank.gif HTTP/1.1" 	304 	"158"			5000
-> 10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET / HTTP/1.1" 					200 	"502"			12000
-> 10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/folder.gif HTTP/1.1" 	304 	"226"			4000
-> 10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/blank.gif HTTP/1.1" 	304 	"107"			5000
+    #Remote_host	Request_time				 Request							Status	Response_bytes	Response_time
+     
+    10.10.10.1 		[13/Feb/2013:10:27:02 +0200] "GET / HTTP/1.1" 					200  	"566"			10000
+    10.10.10.1 		[13/Feb/2013:10:27:02 +0200] "GET /icons/blank.gif HTTP/1.1" 	304 	"195"			5000
+    10.10.10.1 		[13/Feb/2013:10:27:02 +0200] "GET /icons/folder.gif HTTP/1.1" 	304 	"123"			4000
+    10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET / HTTP/1.1" 					200 	"520"			11000
+    10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/folder.gif HTTP/1.1" 	304 	"151"			6000
+    10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/blank.gif HTTP/1.1" 	304 	"158"			5000
+    10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET / HTTP/1.1" 					200 	"502"			12000
+    10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/folder.gif HTTP/1.1" 	304 	"226"			4000
+    10.10.10.1 		[13/Feb/2013:10:27:03 +0200] "GET /icons/blank.gif HTTP/1.1" 	304 	"107"			5000
 
 Let's have this excerpt from a logstash configuration:
 
