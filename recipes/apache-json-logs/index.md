@@ -80,6 +80,26 @@ Running logstash with the above config:
 
 Voila!
 
+## Simplify with mod_macro
+
+We can greatly simplify our setup by using [mod_macro](https://people.apache.org/~fabien/mod_macro/)
+to generate the [LogFormat](http://httpd.apache.org/docs/current/mod/mod_log_config.html#logformat) and
+[CustomLog](http://httpd.apache.org/docs/current/mod/mod_log_config.html#customlog) at the same time.
+
+If our [VirtualHost](http://httpd.apache.org/docs/current/mod/core.html#virtualhost)'s
+[DirectoryRoots](http://httpd.apache.org/docs/current/mod/core.html#directoryroot) are consistently built
+we can predictably build our configuration as follows:'
+
+{% include_code macro.conf %}
+
+We can now create a VirtualHost, that uses this macro:
+
+    <VirtualHost *:80>
+       ServerName www.example.com
+       DirectoryRoot /srv/web/example.com/www/htdocs
+       Use logstash_log www.example.com prod-web137.dmz01.dc03.acme.com
+    </VirtualHost>
+
 ## Is it safe?
 
 Well, I tested with Apache/2.2.22 and found it appears quite safe. 
@@ -98,7 +118,7 @@ reads the apache log and verifies that all the entries parse as valid JSON.
 
 Technically, what is verified above is that the ruby JSON parser can process
 the data. Since apache uses '\xNN' notation for escaping special characters,
-it is technically invalid 'JSON', but I've found may JSON parsers happily
+it is technically invalid 'JSON', but I've found that many JSON parsers happily
 accept it.
 
 You can see the code for this test here: [apache.conf](test/apache.conf),
