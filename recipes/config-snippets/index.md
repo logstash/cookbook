@@ -43,3 +43,19 @@ Here we can paste all kinds of config snippets that might be useful for other pe
 ## Squid
 
      Pattern: %{SYSLOGTIMESTAMP} %{SYSLOGHOST:sourcehost} %{SYSLOGPROG}: %{NUMBER:timestamp} \s+ %{NUMBER:request_msec:float} %{IPORHOST:client} %{WORD:cache_result}/%{NUMBER:status:int} %{NUMBER:size:int} %{WORD:http_type} %{URI:url} - %{WORD:request_type}/%{IPORHOST:forwarded_to} %{GREEDYDATA:content_type}
+
+## iptables
+
+     # Grok patterns for iptables:
+     NETFILTERMAC %{COMMONMAC:dst_mac}:%{COMMONMAC:src_mac}:%{ETHTYPE:ethtype}
+     ETHTYPE (?:(?:[A-Fa-f0-9]{2}):(?:[A-Fa-f0-9]{2}))
+     IPTABLES1 (?:IN=%{WORD:in_device} OUT=(%{WORD:out_device})? MAC=%{NETFILTERMAC} SRC=%{IP:src_ip} DST=%{IP:dst_ip}.*(TTL=%{INT:ttl})?.*PROTO=%{WORD:proto}?.*SPT=%{INT:src_port}?.*DPT=%{INT:dst_port}?.*)
+     IPTABLES2 (?:IN=%{WORD:in_device} OUT=(%{WORD:out_device})? MAC=%{NETFILTERMAC} SRC=%{IP:src_ip} DST=%{IP:dst_ip}.*(TTL=%{INT:ttl})?.*PROTO=%{INT:proto}?.*)
+     IPTABLES (?:%{IPTABLES1}|%{IPTABLES2})
+
+     # Use it in grok:
+     filter {
+       grok {
+         pattern => "%{IPTABLES}"
+       }
+     }
