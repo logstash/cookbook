@@ -19,6 +19,7 @@ There are lots of ways to ship logs off of your servers -
 * [remote_syslog](https://github.com/papertrail/remote_syslog) - ruby, syslog tcp/tls
 * [Message::Passing](https://metacpan.org/module/Message::Passing) - perl, multiple inputs and outputs
 * [nxlog](http://nxlog-ce.sourceforge.net) - C, multi platform including windows, tcp/udp/ssl/tls
+* [logtail](https://github.com/shtouff/logtail) - perl, from flat files to redis
 
 In general, all of the above perform the task of taking log file logs and
 shipping them away in a way that logstash can consume.
