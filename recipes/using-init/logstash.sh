@@ -62,7 +62,7 @@ do_start()
 
 set_pidfile()
 {
-  ps auxww | grep 'logstash.*monolithic' | grep java | awk '{print $2}' > $PIDFILE
+  pgrep -f "$DAEMON[[:space:]]*$ARGS" > $PIDFILE
 }
 
 #
