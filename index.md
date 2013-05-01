@@ -37,6 +37,10 @@ Make apache output json for access logs for easy import into logstash.
 Learn about available tools for shipping logs to logstash in situations where
 you can't fit the logstash agent.
 
+## [debug configs](recipes/debug-config/)
+
+Learn how to debug wrong configs or specific filters.
+
 ## [faster startup time](recipes/faster-startup-time/)
 
 Ways to speed up the logstash startup time.
