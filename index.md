@@ -81,6 +81,11 @@ Saltstack states to manage Logstash and friends
 
 StatsD plugin metrics explanation
 
+## [ Logging from python ](recipes/logging-from-python/)
+
+Have a python app ? This small cookbook will help getting it
+ready to spit out logstash compatible log files
+
 
 ## [The LogStash Book](http://www.logstashbook.com)
 
