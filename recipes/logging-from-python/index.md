@@ -40,28 +40,24 @@ dependencies are provided by python itself.
 First step in your application will be to create an appropriate logger,
 for instance the following code will create a logger ready to output to a file:
 
-```python
-import logging
-import logstash_formatter
-
-logger = logging.getLogger()
-handler = logging.FileHandler('/var/log/myapp.log')
-formatter = logstash_formatter.LogstashFormatter()
-
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-```
+    import logging
+    import logstash_formatter
+    
+    logger = logging.getLogger()
+    handler = logging.FileHandler('/var/log/myapp.log')
+    formatter = logstash_formatter.LogstashFormatter()
+    
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
 
 # logstash setup
 
 Provided the above logger is used to output messages, the following
 logstash input can be used to gather messages in logstash:
 
-```
-file {
-  sincedb_path => "/var/lib/logstash/sincedb"
-  format       => "json_event"
-  type         => "myapp"
-  path         => [ "/var/log/myapp.log" ]
-}
-```
+    file {
+      sincedb_path => "/var/lib/logstash/sincedb"
+      format       => "json_event"
+      type         => "myapp"
+      path         => [ "/var/log/myapp.log" ]
+    }
