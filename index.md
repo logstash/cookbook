@@ -73,10 +73,6 @@ Different puppet modules for Logstash and other software
 
 Chef cookbooks for quickly setting up Logstash and friends
 
-## [Salt states](recipes/salt-states/)
-
-Saltstack states to manage Logstash and friends 
-
 ## [ StatsD metrics ](recipes/statsd-metrics/)
 
 StatsD plugin metrics explanation
