@@ -40,6 +40,11 @@ You now have to paste one/many line/s into the console where logstash is running
 Try to break the pattern down to something more simple when you get parse-errors.
 You have to restart logstash (press `CTRL-c`, `arrow up`, `enter`) every time you change something in the config and want to test that.
 
+Add debug to your stdout output what can additionally help debugging your patterns and fields:
+```
+output {  stdout {  debug => true } }
+```
+
 ## example with URIPATHPARAM
 
 Lets say you have a problem matching `%{URIPATHPARAM}`. You shoud then try to match the following (going from big rules to smaller ones):
