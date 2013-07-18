@@ -59,3 +59,13 @@ Here we can paste all kinds of config snippets that might be useful for other pe
          pattern => "%{IPTABLES}"
        }
      }
+
+## Jenkins logs
+
+     # logstash snippet to remove ConsoleNote stuff in Jenkins logs
+     # note: there are some escape characters you might not see -- check the source of this cookbook
+     filter {
+       mutate {
+         gsub => ["@message", "\[8mha.*==\[0m", ""]
+       }
+     }
