@@ -100,6 +100,58 @@ We can now create a VirtualHost, that uses this macro:
        Use logstash_log www.example.com prod-web137.dmz01.dc03.acme.com
     </VirtualHost>
 
+## Using lumberjack as a shipper
+
+A lightweight alternative is to use
+[lumberjack](https://github.com/jordansissel/lumberjack/) to send your Apache
+logs to a logstash server on another host. This doesn't cover lumberjack
+installation details. See [the github project's
+README](https://github.com/jordansissel/lumberjack/#readme) for that.
+
+Apache can be configured to [pipe logs to an external
+program](http://httpd.apache.org/docs/2.2/logs.html#piped). The nice thing
+about this option (we'll only focus on this) is that the piped program is under
+supervision of the apache master process. So no initscript/daemon to take care
+of, and the process will get restarted by apache, in the event it crashes.
+
+This is done with the first of the following lines:
+
+{% include_code apache-lumberjack.conf %}
+
+The second line ships Apache unformatted error logs (see below). In both cases,
+don't miss out the trailing dash in the lumberjack command-line, which stands
+for "read log messages from standard input".
+
+Then define lumberjack inputs on your logstash central server:
+
+{% include_code logstash-lumberjack.conf %}
+
+Note that the "format" is set to "json_event" in the first case. And as Apache
+has no option for error log formatting, we have to setup a second instance,
+listening on another port, with the "format" set to "plain".
+
+The parts related to error logs can of course be skipped if you're only
+interested by the web server's access logs.
+
+### SELinux
+
+One caveat with our setup when using SELinux is that lumberjack needs to change
+some system limits and connect to the logstash server, which are both blocked
+by default inside the httpd context (`httpd_selinux(8)` for details ). Just
+run:
+
+    sudo setsebool -P httpd_setrlimit 1
+    sudo setsebool -P httpd_can_network_connect 1
+
+in case you see these messages appear:
+
+    # tail /var/log/audit/audit.log
+    type=AVC msg=audit(1367837376.591:136095): avc:  denied  { setrlimit } for  pid=17814 comm="lumberjack" scontext=unconfined_u:system_r:httpd_t:s0 tcontext=unconfined_u:system_r:httpd_t:s0 tclass=process
+    type=AVC msg=audit(1367928599.621:829): avc:  denied  { name_connect } for  pid=11398 comm="lumberjack" dest=6782 scontext=unconfined_u:system_r:httpd_t:s0 tcontext=system_u:object_r:cyphesis_port_t:s0 tclass=tcp_socket
+
+    # tail /var/log/httpd/error_log
+    Assertion failed lumberjack.c:111 in set_resource_limits(), insist(rc != -1): setrlimit(RLIMIT_NOFILE, ... 103) failed: Permission denied
+
 ## Is it safe?
 
 Well, I tested with Apache/2.2.22 and found it appears quite safe. 
