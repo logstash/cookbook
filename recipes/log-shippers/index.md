@@ -20,6 +20,7 @@ There are lots of ways to ship logs off of your servers -
 * [Message::Passing](https://metacpan.org/module/Message::Passing) - perl, multiple inputs and outputs
 * [nxlog](http://nxlog-ce.sourceforge.net) - C, multi platform including windows, tcp/udp/ssl/tls
 * [logtail](https://github.com/shtouff/logtail) - perl, from flat files to redis
+* [node-logstash](https://github.com/bpaquet/node-logstash) - JavaScript, NodeJS implementation of Logstash
 
 In general, all of the above perform the task of taking log file logs and
 shipping them away in a way that logstash can consume.
