@@ -132,7 +132,6 @@ $(document).ready(function() {
       text.addClass("code");
       //console.log("File: " + file + " -- objtype: " + typeof(content));
       //console.log(content);
-
       text.append(document.createTextNode(content));
       self.append(text);
       Site.add_view_plain_text_link(self);
