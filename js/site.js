@@ -97,7 +97,7 @@ $(document).ready(function() {
         /* Call 'Site.template.somefunc(args ...)' with the 
          * element to replace as 'this' */
         Site.template[func].apply($(block), args);
-        console.log(args);
+        //console.log(args);
       } else {
         $(block).append("<i>(Unknown template function '" + func + "')</i>");
       }
@@ -117,9 +117,22 @@ $(document).ready(function() {
     header.addClass("code-header");
     self.append(header)
     
-    $.ajax(file).done(function(content) {
+    $.ajax({
+      url: file,
+      beforeSend: function (xhr) {
+        // before firefox assumes 'text/xml' is the mime type if
+        // the server doesn't include one? I dunno. This fixes a bug where
+        // firefox would show "[object XMLDocumet]" instead of the
+        // actual content of the url being fetched; further, the object would
+        // only contain a firefox error message reporting an xml parse error.
+        xhr.overrideMimeType("text/plain");
+      }
+    }).done(function(content) {
       var text = $("<pre></pre>");
       text.addClass("code");
+      //console.log("File: " + file + " -- objtype: " + typeof(content));
+      //console.log(content);
+
       text.append(document.createTextNode(content));
       self.append(text);
       Site.add_view_plain_text_link(self);
