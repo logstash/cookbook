@@ -82,6 +82,9 @@ StatsD plugin metrics explanation
 Have a python app ? This small cookbook will help getting it
 ready to spit out logstash compatible log files
 
+## [ Logging from NodeJS ](recipes/logging-from-nodejs/)
+
+Have a NodeJS app? Get your logs into logstash efficiently with this cookbook.
 
 ## [The LogStash Book](http://www.logstashbook.com)
 
