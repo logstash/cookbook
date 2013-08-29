@@ -16,7 +16,7 @@ brute-force capture the console stream.
 Some applications use logging modules but the vast majority of those
 wrap the console output to a file with minimal fanfare.
 
-We use at [&yet](http://andyet.com) use [bucker](https://npmjs.org/package/bucker)
+We use at [And Yet](http://andyet.com) use [bucker](https://npmjs.org/package/bucker)
 for that - it's a module that was created by us for internal use and
 we have open-sourced it.  This gives you all the normal things you expect from
 a logging tool: levels, exception handling, middleware integration - and then
