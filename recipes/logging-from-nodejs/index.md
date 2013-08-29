@@ -1,9 +1,10 @@
-index.md
 ---
 layout: article
 title: logging from NodeJS
 tags:  node nodejs bucker
 ---
+
+# Introduction
 
 Logging from NodeJS is normally done by sending console output to
 a file. Most of the time this is done via upstart or runit to
@@ -21,7 +22,7 @@ it also adds multiple transport options.
 Bucker just gained the ability to output directly to logstash via either
 UDP or Redis PubSub and it outputs json_event data for easy input to logstash.
 
-The bucker configuration for UDP:
+# Logging to UDP
 
     {
       logstash: {
@@ -31,7 +32,7 @@ The bucker configuration for UDP:
       }
     }
 
-and for Redis:
+# Logging to Redis
 
     {
       logstash: {
@@ -44,7 +45,7 @@ and for Redis:
 
 NOTE: you can only send to Redis OR UDP, not both
 
-and on the logstash side:
+# Logstash side
 
     udp {
             host => "127.0.0.1"
