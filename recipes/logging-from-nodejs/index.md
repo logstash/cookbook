@@ -4,6 +4,9 @@ title: logging from NodeJS
 tags:  node nodejs bucker
 ---
 
+* Goal: Get NodeJS apps to output logstash compatible log files.
+* Audience: Folks who have NodeJS apps and want an easy path to logstash
+
 # Introduction
 
 Logging from NodeJS is normally done by sending console output to
