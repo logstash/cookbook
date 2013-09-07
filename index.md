@@ -86,6 +86,10 @@ ready to spit out logstash compatible log files
 
 Have a NodeJS app? Get your logs into logstash efficiently with this cookbook.
 
+## [ Cisco ASA ](recipes/cisco-asa/)
+
+Sample configuration for parsing syslog messages from a Cisco ASA firewall
+
 ## [The LogStash Book](http://www.logstashbook.com)
 
 An introductory LogStash book.
