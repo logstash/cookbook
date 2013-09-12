@@ -111,6 +111,8 @@ And in the general query log:
 The slow query log contains slow queries as well as "possibly slow" queries
 (ones made without index hits)
 
+The default format is the long format:
+
 ```
 /usr/local/Cellar/mysql/5.5.27/bin/mysqld, Version: 5.5.27-log (Source distribution). started with:
 Tcp port: 0  Unix socket: (null)
@@ -126,6 +128,21 @@ select sleep(1) from db limit 3;
 # Query_time: 4.003400  Lock_time: 0.000076 Rows_sent: 4  Rows_examined: 4
 SET timestamp=1379006256;
 select sleep(1) from db limit 4;
+```
+
+The short format looks like this:
+
+```
+/usr/local/Cellar/mysql/5.5.27/bin/mysqld, Version: 5.5.27-log (Source distribution). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+# Query_time: 4.005010  Lock_time: 0.000129 Rows_sent: 4  Rows_examined: 4
+use mysql;
+SET timestamp=1379007812;
+select sleep(1) from db limit 4;
+# Query_time: 2.001827  Lock_time: 0.000066 Rows_sent: 2  Rows_examined: 2
+SET timestamp=1379007829;
+select sleep(1) from db limit 2;
 ```
 
 ## Binary Log
