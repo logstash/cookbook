@@ -111,6 +111,23 @@ And in the general query log:
 The slow query log contains slow queries as well as "possibly slow" queries
 (ones made without index hits)
 
+```
+/usr/local/Cellar/mysql/5.5.27/bin/mysqld, Version: 5.5.27-log (Source distribution). started with:
+Tcp port: 0  Unix socket: (null)
+Time                 Id Command    Argument
+# Time: 130912 13:14:51
+# User@Host: root[root] @ localhost []
+# Query_time: 3.003669  Lock_time: 0.000245 Rows_sent: 3  Rows_examined: 3
+use mysql;
+SET timestamp=1379006091;
+select sleep(1) from db limit 3;
+# Time: 130912 13:17:36
+# User@Host: root[root] @ localhost []
+# Query_time: 4.003400  Lock_time: 0.000076 Rows_sent: 4  Rows_examined: 4
+SET timestamp=1379006256;
+select sleep(1) from db limit 4;
+```
+
 ## Binary Log
 
 ## Relay Log
