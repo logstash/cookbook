@@ -41,10 +41,6 @@ you can't fit the logstash agent.
 
 Learn how to debug wrong configs or specific filters.
 
-## [faster startup time](recipes/faster-startup-time/)
-
-Ways to speed up the logstash startup time.
-
 ## [windows service](recipes/windows-service/)
 
 Run logstash as a windows service
