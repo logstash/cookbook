@@ -26,14 +26,15 @@ If you have a large set of logs to slurp,  you may want to set `maxmemory 500mb`
 
 # prerequisites
 
-* This recipe requires logstash 1.1.1 or newer.
+* This recipe requires logstash 1.2 or newer.
 * This recipe assumes a standard rsyslog format ( PRI prefix not needed,  but it does yield richer results )
 * This recipe assumes you have a logstash-indexer running redis for queueing.  
 
 
 # Syslog Server - File Input
 
-The config on your syslog server should look like below.   Pretty simple stuff, we're just declaring a file input and pushing to redis.    I chose not to do any filtering here as I want logstash to simply act as an agent on this server. 
+The config on your syslog server should look like below.   Pretty simple stuff, we're just declaring a file input and pushing to redis.    The filter section here is optional,  but if your syslog server has plenty of free CPU it's probably
+worth doing.
 
 {% include_code syslog-server.conf %}
 
