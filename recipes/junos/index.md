@@ -1,10 +1,10 @@
 ---
 layout: article
-title: Juniper
+title: Juniper JunOS
 tags: juniper junos utm
 ---
 
-* Goal: Demonstrate how to use Grok patterns to index juniper specific syslog messages from JunOS device.
+* Goal: Demonstrate how to use Grok patterns to index JunOS specific syslog messages from JunOS device.
 * Audience: Anyone who has a JunOS device
 
 
