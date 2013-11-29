@@ -7,10 +7,10 @@ tags: init,rhel
 * Goal: Run the logstash agent as a service using an init script.
 * Target audience: Users who have RHEL / Ubuntu based servers.
 
-## REHL
+# REHL
 
 {% include_code logstash.sh %}
 
-## Ubuntu
-======
+# Ubuntu
+
 {% include_code logstash %}
