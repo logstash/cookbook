@@ -86,9 +86,9 @@ Have a NodeJS app? Get your logs into logstash efficiently with this cookbook.
 
 Sample configuration for parsing syslog messages from a Cisco ASA firewall
 
-## [The LogStash Book](http://www.logstashbook.com)
+## [The Logstash Book](http://www.logstashbook.com)
 
-An introductory LogStash book.
+An introductory Logstash book.
 
 ### Contribute!
 
