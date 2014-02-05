@@ -62,7 +62,7 @@ Remove the color codes from Linux logs
 Config snippets collected and provided by users
 
 ## [Puppet modules](recipes/puppet-modules/)
-
+ 
 Different puppet modules for Logstash and other software
 
 ## [Chef cookbooks](recipes/chef-cookbook/)
@@ -89,6 +89,10 @@ Sample configuration for parsing syslog messages from a Cisco ASA firewall
 ## [The Logstash Book](http://www.logstashbook.com)
 
 An introductory Logstash book.
+
+## [ModSecurity audit logs](recipes/modsecurity-audit-logs/)
+
+Need to ingest ModSecurity audit logs? Logstash can do that.
 
 ### Contribute!
 
