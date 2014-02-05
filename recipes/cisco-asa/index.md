@@ -20,6 +20,8 @@ The following configuration shows how you would accept syslog messages on the
 default port (UDP/514) from the firewall and parse the message formats included
 in LogStash as of version 1.2.0.
 
+Also, on your Cisco ASA, make sure 'logging timestamp' is applied in your configuration, otherwise Grok will fail to parse correctly because of the missing timestamp field. 
+
 {% include_code logstash.conf %}
 
 # Extending the Configuration with Custom Message Formats
