@@ -22,7 +22,7 @@ to run logstash from the upstart system daemon (comes with Ubuntu).
 
 ## [running with init](recipes/using-init/)
 
-Run logstash as a service on your RHEL based system using this init script.
+Run logstash as a service on your RHEL/Ubuntu based system using this init script.
 
 ## [parsing syslog](recipes/syslog-pri)
 

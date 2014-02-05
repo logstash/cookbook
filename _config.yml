@@ -1,4 +1,4 @@
-auto: true
+# auto: true
 title: logstash cookbook
 repo: logstash/cookbook
 branch: gh-pages
