@@ -47,4 +47,4 @@ Here is an example config that takes syslog and emits it to stdout:
 
 {% include_code logstash.conf %}
 
-The above sets up logstash to listen on port 5544 for syslog messages.
+The above sets up logstash to listen on port 10514 for syslog messages.
