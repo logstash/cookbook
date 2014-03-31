@@ -86,6 +86,10 @@ Have a NodeJS app? Get your logs into logstash efficiently with this cookbook.
 
 Sample configuration for parsing syslog messages from a Cisco ASA firewall
 
+## [ Suricata IDPS ](recipes/suricata-IDPS/)
+
+Sample configuration of Logstash for Suricata IDPS - Intrusion Detection and Prevention System - log analysis
+
 ## [The Logstash Book](http://www.logstashbook.com)
 
 An introductory Logstash book.
