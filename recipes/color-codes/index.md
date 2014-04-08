@@ -26,7 +26,7 @@ incoming message like this:
 
     # Get rid of color codes
     mutate {
-      gsub => ["@message", "\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]", ""]
+      gsub => ["message", "\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]", ""]
     }
 
 will result in the Ruby logs becoming this:
